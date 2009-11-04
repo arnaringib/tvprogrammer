@@ -12,6 +12,11 @@
 		case 1:	
 			include('sRegister.php');
 			break;
+		case 2:
+			if(isset($_SESSION['access']))
+				if(strcmp($_SESSION['access'], "1") == 0)
+					include('sMain.php');
+			break;
 		default:
 			break;
 	}
