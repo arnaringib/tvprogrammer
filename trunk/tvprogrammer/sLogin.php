@@ -1,5 +1,5 @@
 <table>
-<form action="" method="post">
+<form action="cLogin.php" method="get">
 <tr>
 	<td>Notendanafn:</td><td><input type="text" name="username" /></td>
 </tr>
