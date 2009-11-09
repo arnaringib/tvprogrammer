@@ -111,4 +111,34 @@
 		}
 		return $result;
 	}
+	function getRuv($dateFrom){
+		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom . '/';
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$service = $schedule->item(0)->getElementsByTagName('service');
+		$event = $dom->getElementsByTagName('event');
+	
+		$count = $event->length;
+		
+		$i = 0;
+
+		while($i != $count){
+			$title = $event->item($i)->getElementsByTagName('title');
+			$serieid = $event->item($i)->getAttribute('serie-id');
+			$starttime = $event->item($i)->getAttribute('start-time');
+			$duration = $event->item($i)->getAttribute('duration');
+			echo utf8_decode($title->item(0)->nodeValue) . ' - ' . 
+				utf8_decode($serieid) . ' - ' . 
+				utf8_decode($starttime) . ' - ' .
+				utf8_decode($duration) . '<br/>';
+			$i++;
+		}
+	}
+	function getRuvId($date,$id){
+	
+	}
 ?>
