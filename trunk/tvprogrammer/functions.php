@@ -125,20 +125,51 @@
 		$count = $event->length;
 		
 		$i = 0;
+		
+		$ar = array();
 
 		while($i != $count){
+			$eventid = $event->item($i)->getAttribute('event-id');
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
 			$starttime = $event->item($i)->getAttribute('start-time');
 			$duration = $event->item($i)->getAttribute('duration');
-			echo utf8_decode($title->item(0)->nodeValue) . ' - ' . 
-				utf8_decode($serieid) . ' - ' . 
-				utf8_decode($starttime) . ' - ' .
-				utf8_decode($duration) . '<br/>';
+			
+			array_push($ar,array($eventid, $serieid, $starttime, $duration, $title->item(0)->nodeValue));
 			$i++;
 		}
+		
+		return $ar;
 	}
-	function getRuvId($date,$id){
+	function getSkjareinn($date){
+		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$service = $schedule->item(0)->getElementsByTagName('service');
+		$event = $dom->getElementsByTagName('event');
 	
+		$count = $event->length;
+		
+		$i = 0;
+		
+		$ar = array();
+
+		while($i != $count){
+			$eventid = $event->item($i)->getAttribute('event-id');
+			$title = $event->item($i)->getElementsByTagName('title');
+			$serieid = $event->item($i)->getAttribute('serie-id');
+			$starttime = $event->item($i)->getAttribute('start-time');
+			$duration = $event->item($i)->getAttribute('duration');
+			
+			if(strcmp(substr($starttime,0,10),$date) == 0)
+				array_push($ar,array($eventid, $serieid, $starttime, $duration, $title->item(0)->nodeValue));
+			$i++;
+		}
+		
+		return $ar;
 	}
 ?>
