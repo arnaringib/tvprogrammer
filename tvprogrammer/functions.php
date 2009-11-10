@@ -16,15 +16,20 @@
 			$dEmail = $dom->createElement('email',utf8_encode($email));
 			$dUsername = $dom->createElement('username',utf8_encode($username));
 			$dPassword = $dom->createElement('password',utf8_encode(md5($password)));
+			$dCalender = $dom->createElement('calender', utf8_encode('data/calenders/' . $username . '.xml'));
 			
 			$user->appendChild($dName);
 			$user->appendChild($dEmail);
 			$user->appendChild($dUsername);
 			$user->appendChild($dPassword);
+			$user->appendChild($dCalender);
 			
 			$users->item(0)->appendChild($user);
 			
 			$dom->save($file);
+			
+			makeNewCalender($username);
+			
 			$result = true;
 	
 			unset($dom);
@@ -85,7 +90,19 @@
 		}
 		return $result;
 	}
+	
+	function makeNewCalender($username){
+		$dom = new DOMdocument('1.0','UTF-8');
 		
+		$schedule = $dom->createElement('schedule','');
+				
+		$dom->appendChild($schedule);
+			
+		$dom->save('data/calenders/' . $username . '.xml');
+	
+		unset($dom);
+	}
+	
 	function getName($user){
 		$result = '';
 	
