@@ -1,15 +1,24 @@
-Velkomin/n 
-<?php 
-	echo $_SESSION['name']; 
+<link href="main.css" rel="stylesheet" type="text/css"> 
+<?php include('functions.php'); 
+	$ar = array();
+	$newAr = array();
+	$date = date('Y-m-d');
+	//echo $date;
+	$ar = getSkjareinn($date);
+	print_r ($ar);
+	$i = 0;
+	while($i<count($ar)) {
+		array_push($newAr,($ar[$i][4]));
+		$i++;
+	}
 ?>
-<link href="main.css" rel="stylesheet" type="text/css">
 <table>
 	<tr>
 		<td class="day">
 			<table>
 				<tr class="header"><td><?php getWeekday(date('N')); ?></td></tr>
 				<tr class="header"><td> <?php echo date('d F');?> </td></tr>
-				<tr><td><?php ?></td></tr>
+				<tr><td><?php print_r ($newAr); ?></td></tr>
 			</table>
 		</td>
 		<td class="day">
@@ -56,5 +65,4 @@ Velkomin/n
 		</td>
 	</tr>
 </table>
-
 
