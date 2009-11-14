@@ -189,4 +189,62 @@
 		
 		return $ar;
 	}
+	function getStod2($date){
+		$file = 'http://stod2.visir.is/?pageid=247';
+		
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+		//series = $dom->getElementsByTagName('series');		
+		
+		$count = $event->length;
+		
+		$ar = array();
+		
+		$i = 0;
+		while($i != $count){
+			$service = $event->item($i)->getElementsByTagName('service');
+			$title = $event->item($i)->getElementsByTagName('title');
+			//$episode = $series->item($i)->getAttribute('series');
+			$eventid = $event->item($i)->getAttribute('event_id');
+			$starttime = $event->item($i)->getAttribute('starttime');
+			$duration = $event->item($i)->getAttribute('duration');
+			
+			if(strcmp(substr($starttime,0,10),$date) == 0)
+				array_push($ar,array($eventid, $starttime, $duration, $title->item(0)->nodeValue));
+			$i++;
+		}
+	}
+	
+	function getWeekday($nr){
+		if( $nr>7 ){
+			$nr -= 7;
+		}
+		switch ($nr) {
+			case 1:
+				echo "Mánudagur";
+				break;
+			case 2:
+				echo "Þriðjudagur";
+				break;
+			case 3:
+				echo "Miðvikudagur";
+				break;
+			case 4:
+				echo "Fimmtudagur";
+				break;
+			case 5:
+				echo "Föstudagur";
+				break;
+			case 6:
+				echo "Laugardagur";
+				break;
+			case 7:
+				echo "Sunnudagur";
+				break;
+		}
+	}
 ?>
