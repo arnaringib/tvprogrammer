@@ -7,9 +7,12 @@ include('functions.php');
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>TV-programmer</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
 </head>
 
 <body>
+<script type="text/javascript" src="javascript/channel.js"></script>
 <div class="container">
 	<div class="header">
 		<?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sLinks.php'); ?>

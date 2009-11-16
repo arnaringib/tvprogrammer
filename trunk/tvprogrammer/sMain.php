@@ -1,18 +1,10 @@
 Velkomin/n 
 <?php 
 	echo $_SESSION['name']; 
-?>
+?><br />
+
 <link href="main.css" rel="stylesheet" type="text/css">
 <table>
-	<tr>
-		<td>
-			<select>
-			<option>R&uacute;v</option>
-			<option>St&ouml;&eth; 2</option>
-			<option>Skj&aacute;r einn</option>
-			</select>
-		</td>
-	</tr>
 	<tr>
 		<td class="day">
 			<table>

@@ -272,19 +272,19 @@
 		}
 		switch ($nr) {
 			case 1:
-				echo "Mánudagur";
+				echo "M&aacute;nudagur";
 				break;
 			case 2:
-				echo "Þriðjudagur";
+				echo "&THORN;ri&eth;judagur";
 				break;
 			case 3:
-				echo "Miðvikudagur";
+				echo "Mi&eth;vikudagur";
 				break;
 			case 4:
 				echo "Fimmtudagur";
 				break;
 			case 5:
-				echo "Föstudagur";
+				echo "F&ouml;studagur";
 				break;
 			case 6:
 				echo "Laugardagur";

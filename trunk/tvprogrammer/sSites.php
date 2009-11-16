@@ -20,12 +20,15 @@
 		case 3:
 			unset($_SESSION['access']);
 			session_destroy();
-			header('Location: http://' . $_SERVER['HTTP_HOST'] . '/index.php?pageid=0');
+			header('Location: http://' . $_SERVER['HTTP_HOST'] . '/verkefni/index.php?pageid=0');
 			break;
 		case 4:
 			if(isset($_SESSION['access']))
 				if(strcmp($_SESSION['access'], "1") == 0)
 					include('sUserManagement.php');
+			break;
+		case 5:
+			include('sChannels.php');
 			break;
 		default:
 			break;

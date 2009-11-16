@@ -1,5 +1,6 @@
 <link href="main.css" rel="stylesheet" type="text/css"> 
-<?php include('functions.php'); 
+<?php 
+	include('functions.php');
 	$date = date('Y-m-d');
 ?>
 <table>
