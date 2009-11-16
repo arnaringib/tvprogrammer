@@ -130,7 +130,7 @@
 		return $result;
 	}
 	function getRuv($dateFrom){
-		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom . '/';
+		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
@@ -141,9 +141,7 @@
 		$event = $dom->getElementsByTagName('event');
 	
 		$count = $event->length;
-		
 		$i = 0;
-		
 		$ar = array();
 
 		while($i != $count){
@@ -153,11 +151,17 @@
 			$starttime = $event->item($i)->getAttribute('start-time');
 			$duration = $event->item($i)->getAttribute('duration');
 			
-			array_push($ar,array($eventid, $serieid, $starttime, $duration, $title->item(0)->nodeValue));
+			array_push($ar,array($eventid, $serieid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
 			$i++;
 		}
+		$k=0;
+		while($k<count($ar)){
+			$time = substr($ar[$k][2], 11, 5); 
+			echo "<tr><td>"  . $time . " " . $ar[$k][4] . "</tr></td>"; 
+			$k++; 
+		}
 		
-		return $ar;
+		return 0;
 	}
 	
 	function getSkjareinn($date){
@@ -172,9 +176,7 @@
 		$event = $dom->getElementsByTagName('event');
 	
 		$count = $event->length;
-		
 		$i = 0;
-		
 		$ar = array();
 
 		while($i != $count){
@@ -209,9 +211,7 @@
 		//series = $dom->getElementsByTagName('series');		
 		
 		$count = $event->length;
-		
 		$ar = array();
-		
 		$i = 0;
 		while($i != $count){
 			$service = $event->item($i)->getElementsByTagName('service');
@@ -220,10 +220,49 @@
 			$eventid = $event->item($i)->getAttribute('event_id');
 			$starttime = $event->item($i)->getAttribute('starttime');
 			$duration = $event->item($i)->getAttribute('duration');
-			
-			if(strcmp(substr($starttime,0,10),$date) == 0)
-				array_push($ar,array($eventid, $starttime, $duration, $title->item(0)->nodeValue));
+		
+		if(strcmp(substr($starttime,0,10),$date) == 0)
+				array_push($ar,array($eventid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
 			$i++;
+		}
+		$k=0;
+		while($k<count($ar)){
+			$time = substr($ar[$k][1], 11, 5); 
+			echo "<tr><td>"  . $time . " " . $ar[$k][3] . "</tr></td>"; 
+			$k++; 
+		}
+	}
+	
+	function getStod2Today(){
+		$file = 'http://stod2.visir.is/?pageid=258';
+		
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+		//series = $dom->getElementsByTagName('series');		
+		
+		$count = $event->length;
+		$ar = array();
+		$i = 0;
+		while($i != $count){
+			$service = $event->item($i)->getElementsByTagName('service');
+			$title = $event->item($i)->getElementsByTagName('title');
+			//$episode = $series->item($i)->getAttribute('series');
+			$eventid = $event->item($i)->getAttribute('event_id');
+			$starttime = $event->item($i)->getAttribute('starttime');
+			$duration = $event->item($i)->getAttribute('duration');
+		
+			array_push($ar,array($eventid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
+			$i++;
+		}
+		$k=0;
+		while($k<count($ar)){
+			$time = substr($ar[$k][1], 11, 5); 
+			echo "<tr><td>"  . $time . " " . $ar[$k][3] . "</tr></td>"; 
+			$k++; 
 		}
 	}
 	

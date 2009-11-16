@@ -7,17 +7,24 @@ body {
 	background-color:#0099FF;
 	float:right;
 }
-table {
-	float:center;
+day.table {
+	align:top;
 }
 tr.header td{
 	background-color:#000033;
 	font-size:16px;
 }
+
+tr.header tr{
+	postition:relative;
+	top:10px;	
+}
 	
 td.day table {
 	border-collapse:collapse;
-	width:100%;
+	width:160px;
+	height:400px;
+	table-layout:auto;
 }
 
 td.day {
