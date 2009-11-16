@@ -1,1 +1,2 @@
-<a href="">B&aelig;ta vi&eth; &thorn;&aacute;ttum</a> - <a href="">Breyta m&iacute;nar uppl&yacute;singar</a> - <a href="cLogout.php">&Uacute;tskr&aacute;</a>
+<a href="sSkjarEinn.php">B&aelig;ta vi&eth; &thorn;&aacute;ttum</a> - <a href="">Breyta m&iacute;nar uppl&yacute;singar</a> - 
+<a href="cLogout.php">&Uacute;tskr&aacute;</a> - <a href="sSkjarEinn.php">Skjár 1</a>
