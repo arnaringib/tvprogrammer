@@ -12,6 +12,7 @@
 			$users = $dom->getElementsByTagName('users');
 			$user = $dom->createElement('user');
 			
+			$dId = $dom->createAttribute('id');
 			$dName = $dom->createElement('name',utf8_encode($name));
 			$dEmail = $dom->createElement('email',utf8_encode($email));
 			$dUsername = $dom->createElement('username',utf8_encode($username));
@@ -158,6 +159,7 @@
 		
 		return $ar;
 	}
+	
 	function getSkjareinn($date){
 		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 
@@ -194,6 +196,7 @@
 		}
 		return 0;
 	}
+	
 	function getStod2($date){
 		$file = 'http://stod2.visir.is/?pageid=247';
 		
@@ -250,6 +253,88 @@
 			case 7:
 				echo "Sunnudagur";
 				break;
+		}
+	}
+	
+	function getUserData($user){
+		$result = array();
+	
+		$file = 'data/users.xml';
+		if(file_exists($file)){
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($file)){
+				echo 'Can\'t load a document!';
+			}
+			
+			$username = $dom->getElementsByTagName('username');
+			$name = $dom->getElementsByTagName('name');
+			$email = $dom->getElementsByTagName('email');
+
+			for($i = 0; $i < $username->length; $i++){
+				if(strcmp(utf8_decode($username->item($i)->nodeValue), $user) == 0){
+					array_push($result, utf8_decode($name->item($i)->nodeValue), utf8_decode($email->item($i)->nodeValue));
+					break;
+				}
+			}
+		}
+		else{
+			echo 'File cannot be found.';
+		}
+		return $result;
+	}
+	
+	function userChange($user,$nName,$nEmail){
+		$file = 'data/users.xml';
+		if(file_exists($file)){
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($file)){
+				echo 'Can\'t load a document!';
+			}
+			
+			$username = $dom->getElementsByTagName('username');
+			$name = $dom->getElementsByTagName('name');
+			$email = $dom->getElementsByTagName('email');
+
+			for($i = 0; $i < $username->length; $i++){
+				if(strcmp(utf8_decode($username->item($i)->nodeValue), $user) == 0){
+					$name->item($i)->nodeValue = utf8_encode($nName);
+					$email->item($i)->nodeValue = utf8_encode($nEmail);
+					break;
+				}
+			}
+			$dom->save($file);
+			
+			unset($dom);
+		}
+		else{
+			echo 'File cannot be found.';
+		}
+	}
+	
+	function userChangePassword($user,$nPassword){
+		$file = 'data/users.xml';
+		if(file_exists($file)){
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($file)){
+				echo 'Can\'t load a document!';
+			}
+			
+			$username = $dom->getElementsByTagName('username');
+			$password = $dom->getElementsByTagName('password');
+
+			for($i = 0; $i < $username->length; $i++){
+				if(strcmp(utf8_decode($username->item($i)->nodeValue), $user) == 0){
+					$password->item($i)->nodeValue = utf8_encode(md5($nPassword));
+					break;
+				}
+			}
+			
+			$dom->save($file);
+			
+			unset($dom);
+		}
+		else{
+			echo 'File cannot be found.';
 		}
 	}
 ?>
