@@ -183,11 +183,16 @@
 			$duration = $event->item($i)->getAttribute('duration');
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0)
-				array_push($ar,array($eventid, $serieid, $starttime, $duration, $title->item(0)->nodeValue));
+				array_push($ar,array($eventid, $serieid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
 			$i++;
 		}
-		
-		return $ar;
+		$k=0;
+		while($k<count($ar)){
+			$time = substr($ar[$k][2], 11); 
+			echo "<tr><td>"  . $time . " " . $ar[$k][4] . "</tr></td>"; 
+			$k++; 
+		}
+		return 0;
 	}
 	function getStod2($date){
 		$file = 'http://stod2.visir.is/?pageid=247';
