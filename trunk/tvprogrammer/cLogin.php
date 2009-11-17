@@ -6,6 +6,7 @@
 	if(chkLogin($username,$password)){
 		$_SESSION['username'] = $username;
 		$_SESSION['name'] = getName($username);
+		$_SESSION['calender'] = getCalender($username);
 		$_SESSION['access'] = "1";
 		header('Location: http://' . $_SERVER['HTTP_HOST'] . '/verkefni/index.php?pageid=2');
 	}

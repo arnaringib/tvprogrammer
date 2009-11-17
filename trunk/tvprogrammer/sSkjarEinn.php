@@ -1,9 +1,14 @@
-<link href="main.css" rel="stylesheet" type="text/css"> 
 <?php 
+	session_start();
 	include('functions.php');
 	$date = date('Y-m-d');
 	$test = "test";
 ?>
+
+<link href="main.css" rel="stylesheet" type="text/css"> 
+<form>
+<input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="skjarEinn()"/>
+<div id="test"></div>
 <table>
 	<tr>
 		<td class="day">
@@ -58,3 +63,4 @@
 	</tr>
 </table>
 
+</form>
