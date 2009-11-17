@@ -129,6 +129,33 @@
 		}
 		return $result;
 	}
+	
+	function getCalender($user){
+		$result = '';
+	
+		$file = 'data/users.xml';
+		if(file_exists($file)){
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($file)){
+				echo 'Can\'t load a document!';
+			}
+			
+			$username = $dom->getElementsByTagName('username');
+			$calender = $dom->getElementsByTagName('calender');
+
+			for($i = 0; $i < $username->length; $i++){
+				if(strcmp(utf8_decode($username->item($i)->nodeValue), $user) == 0){
+					$result = utf8_decode($calender->item($i)->nodeValue);
+					break;
+				}
+			}
+		}
+		else{
+			echo 'File cannot be found.';
+		}
+		return $result;
+	}
+	
 	function getRuv($dateFrom){
 		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
 
@@ -137,31 +164,21 @@
 			echo 'Can\'t load a document!';
 		}
 		$schedule = $dom->getElementsByTagName('schedule');
-		$service = $schedule->item(0)->getElementsByTagName('service');
 		$event = $dom->getElementsByTagName('event');
 	
 		$count = $event->length;
 		$i = 0;
-		$ar = array();
 
 		while($i != $count){
-			$eventid = $event->item($i)->getAttribute('event-id');
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
 			$starttime = $event->item($i)->getAttribute('start-time');
-			$duration = $event->item($i)->getAttribute('duration');
-			
-			array_push($ar,array($eventid, $serieid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
+		
+			$time = substr($starttime, 11, 5); 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';	 
+
 			$i++;
 		}
-		$k=0;
-		while($k<count($ar)){
-			$time = substr($ar[$k][2], 11, 5); 
-			echo "<tr><td>"  . $time . " " . $ar[$k][4] . "</tr></td>"; 
-			$k++; 
-		}
-		
-		return 0;
 	}
 	
 	function getSkjareinn($date){
@@ -172,31 +189,22 @@
 			echo 'Can\'t load a document!';
 		}
 		$schedule = $dom->getElementsByTagName('schedule');
-		$service = $schedule->item(0)->getElementsByTagName('service');
 		$event = $dom->getElementsByTagName('event');
 	
 		$count = $event->length;
 		$i = 0;
-		$ar = array();
 
 		while($i != $count){
-			$eventid = $event->item($i)->getAttribute('event-id');
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
 			$starttime = $event->item($i)->getAttribute('start-time');
-			$duration = $event->item($i)->getAttribute('duration');
 			
-			if(strcmp(substr($starttime,0,10),$date) == 0)
-				array_push($ar,array($eventid, $serieid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
+			if(strcmp(substr($starttime,0,10),$date) == 0){	
+				$time = substr($starttime, 11); 
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+			}
 			$i++;
 		}
-		$k=0;
-		while($k<count($ar)){
-			$time = substr($ar[$k][2], 11); 
-			echo "<tr><td>"  . $time . " " . $ar[$k][4] . "</tr></td>"; 
-			$k++; 
-		}
-		return 0;
 	}
 	
 	function getStod2($date){
@@ -208,28 +216,19 @@
 		}
 		$schedule = $dom->getElementsByTagName('schedule');
 		$event = $dom->getElementsByTagName('event');
-		//series = $dom->getElementsByTagName('series');		
-		
+				
 		$count = $event->length;
-		$ar = array();
 		$i = 0;
 		while($i != $count){
-			$service = $event->item($i)->getElementsByTagName('service');
 			$title = $event->item($i)->getElementsByTagName('title');
-			//$episode = $series->item($i)->getAttribute('series');
-			$eventid = $event->item($i)->getAttribute('event_id');
 			$starttime = $event->item($i)->getAttribute('starttime');
-			$duration = $event->item($i)->getAttribute('duration');
 		
-		if(strcmp(substr($starttime,0,10),$date) == 0)
-				array_push($ar,array($eventid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
+			if(strcmp(substr($starttime,0,10),$date) == 0){
+				$time = substr($starttime, 11, 5); 
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+			}
+				
 			$i++;
-		}
-		$k=0;
-		while($k<count($ar)){
-			$time = substr($ar[$k][1], 11, 5); 
-			echo "<tr><td>"  . $time . " " . $ar[$k][3] . "</tr></td>"; 
-			$k++; 
 		}
 	}
 	
@@ -241,28 +240,19 @@
 			echo 'Can\'t load a document!';
 		}
 		$schedule = $dom->getElementsByTagName('schedule');
-		$event = $dom->getElementsByTagName('event');
-		//series = $dom->getElementsByTagName('series');		
+		$event = $dom->getElementsByTagName('event');		
 		
 		$count = $event->length;
-		$ar = array();
 		$i = 0;
 		while($i != $count){
-			$service = $event->item($i)->getElementsByTagName('service');
 			$title = $event->item($i)->getElementsByTagName('title');
-			//$episode = $series->item($i)->getAttribute('series');
-			$eventid = $event->item($i)->getAttribute('event_id');
 			$starttime = $event->item($i)->getAttribute('starttime');
-			$duration = $event->item($i)->getAttribute('duration');
-		
-			array_push($ar,array($eventid, $starttime, $duration, utf8_decode($title->item(0)->nodeValue)));
+
+
+			$time = substr($starttime, 11, 5); 
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+
 			$i++;
-		}
-		$k=0;
-		while($k<count($ar)){
-			$time = substr($ar[$k][1], 11, 5); 
-			echo "<tr><td>"  . $time . " " . $ar[$k][3] . "</tr></td>"; 
-			$k++; 
 		}
 	}
 	
@@ -374,6 +364,100 @@
 		}
 		else{
 			echo 'File cannot be found.';
+		}
+	}
+	
+	function checkInCalender($starttime,$title,$calender){
+		$result = false;
+		$userfile = $calender;
+		if(file_exists($userfile)){
+	
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($userfile)){
+				echo 'Can\'t load a document!';
+			}
+	
+			$event = $dom->getElementsByTagName('event');
+	
+			for($i = 0; $i != $event->length; $i++){
+				$title = $event->item($i)->getElementsByTagName('title');
+				if(strcmp($event->item($i)->getAttribute('start-time'),$starttime) == 0 && strcmp(utf8_decode($title->item(0)->nodeValue),$title) == 0){
+					$result = true;
+					break;
+				}
+			}
+		}
+		else{
+			echo 'File cannot be found.';
+		}
+		return $result;
+	}
+	
+	function addToCalender($date, $sid, $calender,$cal){
+		$userfile = $calender;
+		if(file_exists($userfile)){
+			$dom = new DOMdocument('1.0', 'UTF-8');
+			if(!$dom->load($userfile)){
+				echo 'Can\'t load a document!';
+			}
+			
+			$uSchedule = $dom->getElementsByTagName('schedule');
+			if(strcmp($cal,"0")==0){
+				$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $date;			
+			}
+			if(strcmp($cal,"1")==0){
+				if(stcmp($date,date('Y-m-d')) == 0){
+					$file = 'http://stod2.visir.is/?pageid=258';
+				}
+				else{
+					$file = 'http://stod2.visir.is/?pageid=247';
+				}	
+			}
+			if(strcmp($cal,"2")==0){
+				$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
+			}
+
+			$sDom = new DOMdocument('1.0', 'UTF-8');
+			if(!$sDom->load($file)){
+				echo 'Can\'t load a document!';
+			}
+			$event = $sDom->getElementsByTagName('event');
+
+			$title = $event->item($sid)->getElementsByTagName('title');
+			if(!checkInCalender($event->item($sid)->getAttribute('start-time'),$title->item(0)->nodeValue,$userfile)){
+				$bl = $dom->importNode($event->item($sid),true);
+				$uSchedule->item(0)->appendChild($bl);
+				$dom->save($userfile);
+			}
+		}
+		else{
+			echo 'File cannot be found.';
+		}
+	}
+	
+	function getUserCalender($calender,$date){
+		$file = $calender;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+	
+		$count = $event->length;
+		$i = 0;
+
+		while($i != $count){
+			$title = $event->item($i)->getElementsByTagName('title');
+			$starttime = $event->item($i)->getAttribute('start-time');
+			
+			if(strcmp(substr($starttime,0,10),$date) == 0){
+	
+				$time = substr($starttime, 11); 
+				echo '<tr><td>'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+			}
+			$i++;
 		}
 	}
 ?>

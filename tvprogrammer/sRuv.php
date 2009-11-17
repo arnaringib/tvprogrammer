@@ -3,6 +3,8 @@
 	include('functions.php');
 	$date = date('Y-m-d');
 ?>
+<input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="ruv()"/>
+<div id="test"></div>
 <table>
 	<tr>
 		<td class="day">

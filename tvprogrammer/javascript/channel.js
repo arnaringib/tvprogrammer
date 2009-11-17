@@ -1,6 +1,6 @@
 // JavaScript Document
+var last = "0";
 $(document).ready(function(){
-	var last = "0";
 	$.ajax({
 		method: "get",
 		url: "channels.php",
@@ -19,15 +19,47 @@ $(document).ready(function(){
 						method: "get",
 						url: "channels.php",
 						data: "channel=" + $(this).val(),
-						beforeSend: function(){$("#loading").show("fast");},
+						beforeSend: function(){$("#loading").show("fast"); },
 						complete: function(){ $("#loading").hide("fast");}, 
 						success: function(html){
 						$("#showCal").show("slow");
 						$("#showCal").html(html);}
 				    });
+					last = $(this).val();
 				}
            });
 	});
 });
-				
-									
+
+function skjarEinn(){
+	$('input:checked').each(function(){
+		$.ajax({
+			method: "get",
+			url: "updateCalander.php",
+			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=2")
+		});
+	});
+	alert('done');
+}
+
+function ruv(){
+	$('input:checked').each(function(){
+		$.ajax({
+			method: "get",
+			url: "updateCalander.php",
+			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=0")
+		});
+	});
+	alert('done');
+}
+
+function stod2(){
+	$('input:checked').each(function(){
+		$.ajax({
+			method: "get",
+			url: "updateCalander.php",
+			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=1")
+		});
+	});
+	alert('done');
+}
