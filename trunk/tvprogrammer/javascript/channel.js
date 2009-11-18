@@ -3,6 +3,15 @@ var last = "0";
 $(document).ready(function(){
 	$.ajax({
 		method: "get",
+		url: "calender.php",
+		beforeSend: function(){$("#calLoading").show("fast");},
+		complete: function(){ $("#calLoading").hide("fast");}, 
+		success: function(html){
+		$("#userCalender").show("slow");
+		$("#userCalender").html(html);}
+	});
+	$.ajax({
+		method: "get",
 		url: "channels.php",
 		data: "channel=0",
 		beforeSend: function(){$("#loading").show("fast");},
@@ -66,11 +75,22 @@ function stodTvo(){
 
 function eyda(){
 	$('input:checked').each(function(){
-		$.ajax({
+		var val = $(this).val();
+		$("#userCalender").hide("slow");
+	   	$.ajax({
 			method: "get",
 			url: "deleteFromCalender.php",
-			data: ("id=" + $(this).val())
-	   });								 
-		alert('done');
+			data: ("id=" + $(this).val()),
+			beforeSend: function(){$("#calLoading").show("fast");},
+			complete: function(){ $("#calLoading").hide("fast");}, 
+			success: function(html){
+				$.ajax({
+					method: "get",
+					url: "calender.php"
+				});
+				$("#row"+val).hide(0);
+				$("#row"+val+"2").hide(0);
+				$("#userCalender").show("slow");}
+	    });			 
 	});
 }
