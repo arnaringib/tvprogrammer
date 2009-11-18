@@ -3,7 +3,7 @@ Velkomin/n
 	echo $_SESSION['name']; 
 	$date = date('Y-m-d');
 ?><br />
-
+<input type="button" value="Ey&eth;a v&ouml;ldum &thorn;&aacute;ttum" onclick="eyda()"/>
 <link href="main.css" rel="stylesheet" type="text/css">
 <table>
 	<tr>

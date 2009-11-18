@@ -250,7 +250,7 @@
 
 
 			$time = substr($starttime, 11, 5); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 
 			$i++;
 		}
@@ -367,21 +367,25 @@
 		}
 	}
 	
-	function checkInCalender($starttime,$title,$calender){
+	function checkInCalender($starttime,$title,$calender,$cal){
 		$result = false;
 		$userfile = $calender;
 		if(file_exists($userfile)){
-	
 			$dom = new DOMdocument('1.0', 'UTF-8');
 			if(!$dom->load($userfile)){
 				echo 'Can\'t load a document!';
 			}
-	
+
 			$event = $dom->getElementsByTagName('event');
-	
+			if(strcmp($cal,"1")==0){
+				$start = 'starttime';
+			}
+			else{
+				$start = 'start-time';
+			}
 			for($i = 0; $i != $event->length; $i++){
 				$title = $event->item($i)->getElementsByTagName('title');
-				if(strcmp($event->item($i)->getAttribute('start-time'),$starttime) == 0 && strcmp(utf8_decode($title->item(0)->nodeValue),$title) == 0){
+				if(strcmp($event->item($i)->getAttribute($start),$starttime) == 0 && strcmp(utf8_decode($title->item(0)->nodeValue),$title) == 0){
 					$result = true;
 					break;
 				}
@@ -400,21 +404,25 @@
 			if(!$dom->load($userfile)){
 				echo 'Can\'t load a document!';
 			}
-			
+			$stodtvo = false;
 			$uSchedule = $dom->getElementsByTagName('schedule');
 			if(strcmp($cal,"0")==0){
-				$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $date;			
+				$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $date;
+				$start = 'start-time';			
 			}
 			if(strcmp($cal,"1")==0){
-				if(stcmp($date,date('Y-m-d')) == 0){
+				if(strcmp($date,date('Y-m-d')) == 0){
 					$file = 'http://stod2.visir.is/?pageid=258';
 				}
 				else{
 					$file = 'http://stod2.visir.is/?pageid=247';
 				}	
+				$start = 'starttime';
+				$stodtvo = true;
 			}
 			if(strcmp($cal,"2")==0){
 				$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
+				$start = 'start-time';
 			}
 
 			$sDom = new DOMdocument('1.0', 'UTF-8');
@@ -422,10 +430,15 @@
 				echo 'Can\'t load a document!';
 			}
 			$event = $sDom->getElementsByTagName('event');
-
+			
 			$title = $event->item($sid)->getElementsByTagName('title');
-			if(!checkInCalender($event->item($sid)->getAttribute('start-time'),$title->item(0)->nodeValue,$userfile)){
+			if(!checkInCalender($event->item($sid)->getAttribute($start),$title->item(0)->nodeValue,$userfile,$cal)){
 				$bl = $dom->importNode($event->item($sid),true);
+				if($stodtvo){
+					$attr = $bl->getAttribute('starttime');
+					$bl->removeAttribute('starttime');
+					$bl->setAttribute('start-time',$attr);
+				}
 				$uSchedule->item(0)->appendChild($bl);
 				$dom->save($userfile);
 			}
@@ -455,9 +468,42 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
 				$time = substr($starttime, 11); 
-				echo '<tr><td>'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+				echo '<tr><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
 			}
 			$i++;
 		}
+	}
+	
+	function removeFromCalender($calender,$id){
+		$file = $calender;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+	
+		$schedule = $dom->documentElement;
+
+
+		$event = $schedule->getElementsByTagName('event')->item($id);
+		$oldevent = $schedule->removeChild($event);
+
+		$dom->save($file);
+	}
+	
+	function removeOldFromCalender($calender,$id){
+		$file = $calender;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+	//	while
+//		$event = $schedule->getElementsByTagName('event')->item($id);
+//		$schedule->removeChild($event);
+		
+		$dom->save($file);
 	}
 ?>
