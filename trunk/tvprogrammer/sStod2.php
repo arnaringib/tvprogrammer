@@ -3,7 +3,7 @@
 	include('functions.php');
 	$date = date('Y-m-d');
 ?>
-<input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="stod2()"/>
+<input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="stodTvo()"/>
 <div id="test"></div>
 <table>
 	<tr>

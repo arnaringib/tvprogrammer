@@ -19,7 +19,7 @@ $(document).ready(function(){
 						method: "get",
 						url: "channels.php",
 						data: "channel=" + $(this).val(),
-						beforeSend: function(){$("#loading").show("fast"); },
+						beforeSend: function(){$("#loading").show("fast");},
 						complete: function(){ $("#loading").hide("fast");}, 
 						success: function(html){
 						$("#showCal").show("slow");
@@ -53,7 +53,7 @@ function ruv(){
 	alert('done');
 }
 
-function stod2(){
+function stodTvo(){
 	$('input:checked').each(function(){
 		$.ajax({
 			method: "get",
@@ -62,4 +62,15 @@ function stod2(){
 		});
 	});
 	alert('done');
+}
+
+function eyda(){
+	$('input:checked').each(function(){
+		$.ajax({
+			method: "get",
+			url: "deleteFromCalender.php",
+			data: ("id=" + $(this).val())
+	   });								 
+		alert('done');
+	});
 }
