@@ -468,7 +468,7 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
 				$time = substr($starttime, 11); 
-				echo '<tr><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
 			}
 			$i++;
 		}
