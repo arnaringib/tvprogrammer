@@ -8,5 +8,9 @@
 		</select></td>
 	</tr>
 </table>
+<!--<a href="javascript:getLast()"/>Fyrri vika</a> 
+<a href="javascript:getNextChannel()"/>N&aelig;sta vika</a>-->
+
+
 <div id="showCal"></div>
 <div id="loading">N&aelig;r &iacute; g&ouml;gn, vinsamlegast hinkra&eth;u...</div>

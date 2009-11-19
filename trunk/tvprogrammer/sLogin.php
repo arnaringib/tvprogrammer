@@ -1,7 +1,9 @@
 <table>
-<form action="cLogin.php" method="get">
+<form action="cLogin.php" method="get"> 
 <tr>
+
 	<td>Notendanafn:</td><td><input type="text" name="username" value="<?php if(isset($_GET['username'])) echo $_GET['username']; ?>"/></td>
+
 </tr>
 <tr>
 	<td>Lykilor&eth;:</td><td><input type="password" name="password" /></td>
