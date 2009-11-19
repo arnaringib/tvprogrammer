@@ -182,7 +182,7 @@
 		}
 	}
 	
-	function getSkjareinn($date){
+	function getSkjarEinn($date){
 		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -194,7 +194,7 @@
 	
 		$count = $event->length;
 		$i = 0;
-
+		$ar = array();
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
@@ -235,6 +235,7 @@
 	
 	function getStod2Today(){
 		$file = 'http://stod2.visir.is/?pageid=258';
+		$date = getDate();
 		
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
@@ -251,7 +252,9 @@
 
 
 			$time = substr($starttime, 11, 5); 
+
 			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+
 
 			$i++;
 		}
@@ -263,28 +266,23 @@
 		}
 		switch ($nr) {
 			case 1:
-				echo "M&aacute;nudagur";
-				break;
+				return "M&aacute;nudagur";
 			case 2:
-				echo "&THORN;ri&eth;judagur";
-				break;
+				return "&THORN;ri&eth;judagur";
 			case 3:
-				echo "Mi&eth;vikudagur";
-				break;
+				return "Mi&eth;vikudagur";
 			case 4:
-				echo "Fimmtudagur";
-				break;
+				return "Fimmtudagur";
 			case 5:
-				echo "F&ouml;studagur";
-				break;
+				return "F&ouml;studagur";
 			case 6:
-				echo "Laugardagur";
-				break;
+				return "Laugardagur";
 			case 7:
-				echo "Sunnudagur";
-				break;
+				return "Sunnudagur";
 		}
 	}
+
+	
 	
 	function getUserData($user){
 		$result = array();
@@ -469,7 +467,10 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
 				$time = substr($starttime, 11); 
+
 				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+
+
 			}
 			$i++;
 		}

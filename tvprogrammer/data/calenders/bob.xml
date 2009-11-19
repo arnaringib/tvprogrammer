@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule><event event-id="4504853" serie-id="3870" start-time="2009-11-22 08:24:00" duration="00:11:10">
+      <title>Lítil prinsessa</title>
+      <original-title>Little Princess</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="8" number-of-episodes="35"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    </event></schedule>

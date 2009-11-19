@@ -56,7 +56,7 @@ function ruv(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=0")
+			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=0&date=1")
 		});
 	});
 	alert('done');
@@ -93,6 +93,135 @@ function eyda(){
 				$("#userCalender").show("slow");}
 	    });
 	});
+
+}
+function getNext(){
+		$.ajax({
+			method:"get",
+			url: "calender.php",
+			data: "date=1",
+			beforeSend: function(){$("#calLoading").show("fast");},
+			complete: function(){ $("#calLoading").hide("fast");}, 
+			success: function(html){
+				$("#userCalender").hide("slow");
+				$("#userCalender").show("slow");
+				$("#userCalender").html(html);
+			}
+			
+		});
+        
+   }
+function getLast(){
+	$.ajax({
+		method:"get",
+		url: "calender.php",
+		data: "date=2",
+		beforeSend: function(){$("#calLoading").show("fast");},
+		complete: function(){ $("#calLoading").hide("fast");}, 
+		success: function(html){
+			$("#userCalender").hide("slow");
+			$("#userCalender").show("slow");
+			$("#userCalender").html(html);
+		}
+		
+	});
+    
+}
+function getNextRuv(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sRuv.php",
+		data: "date=1",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
+}
+function getLastRuv(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sRuv.php",
+		data: "date=2",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
+}
+function getNextSkjarEinn(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sSkjarEinn.php",
+		data: "date=1",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
+}
+function getLastSkjarEinn(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sSkjarEinn.php",
+		data: "date=2",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
+}
+function getNextStod2(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sStod2.php",
+		data: "date=1",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
+}
+function getLastStod2(){
+	$("#showCal").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sStod2.php",
+		data: "date=2",
+		beforeSend: function(){$("#loading").show("fast");},
+		complete: function(){ $("#loading").hide("fast");}, 
+		success: function(html){
+			$("#showCal").show("slow");
+			$("#showCal").html(html);
+		}
+		
+	});
+    
 }
 function cleanOld(){
 		$.ajax({
