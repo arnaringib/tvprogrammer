@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$.ajax({
 		method: "get",
 		url: "calender.php",
-		beforeSend: function(){$("#calLoading").show("fast");},
+		beforeSend: function(){$("#calLoading").show("fast"); cleanOld();},
 		complete: function(){ $("#calLoading").hide("fast");}, 
 		success: function(html){
 		$("#userCalender").show("slow");
@@ -91,6 +91,12 @@ function eyda(){
 				$("#row"+val).hide(0);
 				$("#row"+val+"2").hide(0);
 				$("#userCalender").show("slow");}
-	    });			 
+	    });
 	});
+}
+function cleanOld(){
+		$.ajax({
+			method: "get",
+			url: "cleanCalender.php"
+		});
 }
