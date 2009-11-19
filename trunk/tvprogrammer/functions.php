@@ -1,4 +1,5 @@
 <?php 
+	require_once 'other/iCalcreator.php';
 	function addUser($name,$email,$username,$password){
 		$result = false;
 		
@@ -491,7 +492,59 @@
 		$dom->save($file);
 	}
 	
-	function removeOldFromCalender($calender,$id){
+	function removeOldFromCalender($calender){
+		$file = $calender;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->documentElement;
+		$event = $dom->getElementsByTagName('event');
+
+		$count = $event->length;
+		$i = 0;
+		while($i != $count){
+			$time = getStartTime($event->item($i)->getAttribute('start-time'));
+			$eventTime = mktime($time[3], $time[4], $time[5], $time[1], $time[2], $time[0]);
+			$now = mktime(date('H'),date('i'),date('s'),date('m'),date('d'),date('Y'));
+			if($eventTime < $now){
+				removeFromCalender($calender,$i);
+			}
+			$i++;
+		}
+	}
+	
+	function getStartTime($starttime){
+		$ar = array();
+//		2009-11-21 10:25:00
+		array_push($ar,substr($starttime,0,4),
+					   substr($starttime,5,2),
+					   substr($starttime,8,2),
+					   substr($starttime,11,2),
+					   substr($starttime,14,2),
+					   substr($starttime,17,2));
+					   
+		return $ar;
+	}
+	
+	function getDuration($duration){
+		$ar = array();
+		if(strlen($duration) > 5){
+			array_push($ar,substr($duration,0,2),
+					   substr($duration,3,2),
+					   substr($duration,6,2));
+		}
+		else{
+			array_push($ar, "0" . substr($duration,0,1),
+			   substr($duration,2,2),
+			   "00");
+		}
+					   
+		return $ar;
+	}
+	
+	function makeIcalender($calender){
 		$file = $calender;
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -500,10 +553,45 @@
 		}
 		$schedule = $dom->getElementsByTagName('schedule');
 		$event = $dom->getElementsByTagName('event');
-	//	while
-//		$event = $schedule->getElementsByTagName('event')->item($id);
-//		$schedule->removeChild($event);
+		$title = $dom->getElementsByTagName('title');
+		$description = $dom->getElementsByTagName('description');
+				
+		$count = $event->length; 
+		$i = 0;
+		$cal = new vcalendar();
+		// Calender Settings
+		$cal->setConfig( "unique_id", "tvProgrammer" ); 
+		$cal->setProperty( "x-wr-calname", "Tv Programmer"); 
+		$cal->setProperty( "version", "2.0");
+		$cal->setProperty( "calscale", "GREGORIAN");
+		$cal->setProperty( "calscale", "GREGORIAN");
+		$cal->setProperty( "method", "PUBLISH");
 		
-		$dom->save($file);
+		while($i != $count){
+			// Get data from xml.
+			$time = getStartTime($event->item($i)->getAttribute('start-time'));
+			$duration = getDuration($event->item($i)->getAttribute('duration'));
+			$cTitle = utf8_decode($title->item($i)->nodeValue);
+			$cDescription = utf8_decode($description->item($i)->nodeValue);
+			$cDuration = getStartTime(date('Y-m-d H:i:s', mktime($time[3]+$duration[0], $time[4]+$duration[1], $time[5]+$duration[2], $time[1], $time[2], $time[0])));
+			// Create for iCalendar
+			$ev = new vevent();	
+			$ev->setProperty('created', date('Ymd\THis'));
+			$ev->setProperty('dtstart', $time[0],$time[1],$time[2],$time[3],$time[4],$time[5]);
+			$ev->setProperty('dtend', $cDuration[0],$cDuration[1],$cDuration[2],$cDuration[3],$cDuration[4],$cDuration[5]);
+			$ev->setProperty('summary', $cTitle);
+			$ev->setProperty('location', "TV");
+			$ev->setProperty('description', convertIcelandic($cDescription));
+			$cal->addComponent($ev);
+			
+			$i++;
+		}
+		return $cal;
+	}
+	
+	function convertIcelandic($str){
+		$isl = array('Á','á','É','é','Ý','ý','Ú','ú','Í','í','Ó','ó','Æ','æ','Þ','þ','Ö','ö');
+		$ens = array('A','a','E','e','Y','y','U','u','I','i','O','o','AE','ae','TH','th','O','o');
+		return str_replace($isl,$ens,$str);
 	}
 ?>
