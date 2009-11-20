@@ -182,7 +182,7 @@
 		}
 	}
 	
-	function getSkjarEinn($date){
+	function getSkjareinn($date){
 		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -194,7 +194,7 @@
 	
 		$count = $event->length;
 		$i = 0;
-		$ar = array();
+
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
@@ -235,7 +235,6 @@
 	
 	function getStod2Today(){
 		$file = 'http://stod2.visir.is/?pageid=258';
-		$date = getDate();
 		
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
@@ -252,9 +251,7 @@
 
 
 			$time = substr($starttime, 11, 5); 
-
 			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
-
 
 			$i++;
 		}
@@ -281,8 +278,6 @@
 				return "Sunnudagur";
 		}
 	}
-
-	
 	
 	function getUserData($user){
 		$result = array();
@@ -467,10 +462,7 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
 				$time = substr($starttime, 11); 
-
 				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
-
-
 			}
 			$i++;
 		}
@@ -495,11 +487,12 @@
 	
 	function removeOldFromCalender($calender){
 		$file = $calender;
-
+		
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
 			echo 'Can\'t load a document!';
 		}
+		
 		$schedule = $dom->documentElement;
 		$event = $dom->getElementsByTagName('event');
 
@@ -514,17 +507,28 @@
 			}
 			$i++;
 		}
+		sortCalendar($calender);
 	}
 	
 	function getStartTime($starttime){
 		$ar = array();
 //		2009-11-21 10:25:00
-		array_push($ar,substr($starttime,0,4),
+		if(strlen($starttime) == 19){
+			array_push($ar,substr($starttime,0,4),
 					   substr($starttime,5,2),
 					   substr($starttime,8,2),
 					   substr($starttime,11,2),
 					   substr($starttime,14,2),
 					   substr($starttime,17,2));
+		}
+		else{
+			array_push($ar,substr($starttime,0,4),
+					   substr($starttime,5,2),
+					   substr($starttime,8,2),
+					   substr($starttime,11,2),
+					   substr($starttime,14,2),
+					   "00");
+		}
 					   
 		return $ar;
 	}
@@ -594,5 +598,39 @@
 		$isl = array('Á','á','É','é','Ý','ý','Ú','ú','Í','í','Ó','ó','Æ','æ','Þ','þ','Ö','ö');
 		$ens = array('A','a','E','e','Y','y','U','u','I','i','O','o','AE','ae','TH','th','O','o');
 		return str_replace($isl,$ens,$str);
+	}
+	
+	function sortCalendar($calendar){
+		$file = $calendar;
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$event = $dom->getElementsByTagName('event');
+
+		for($i = 0; $i != $event->length; $i++){
+			$min = $i;
+			for($j = $i+1; $j != $event->length; $j++){
+				$p = getStartTime($event->item($min)->getAttribute('start-time'));
+				$q = getStartTime($event->item($j)->getAttribute('start-time'));
+				$pDate = mktime($p[3], $p[4], $p[5], $p[1], $p[2], $p[0]);
+				$qDate = mktime($q[3], $q[4], $q[5], $q[1], $q[2], $q[0]);
+				if($qDate < $pDate){
+					$min = $j;
+				}
+			}
+
+			if($i != $min){
+				$node1 = $event->item($min);
+				$node2 = $event->item($i);
+				
+				$node1Clone = $node1->cloneNode(true);
+				$node2Clone = $node2->cloneNode(true);
+				
+				$node1->parentNode->replaceChild($node2Clone, $node1);
+				$node2->parentNode->replaceChild($node1Clone, $node2);
+			}
+		}
+		$dom->save($calendar);
 	}
 ?>
