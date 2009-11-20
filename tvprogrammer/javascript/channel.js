@@ -56,10 +56,13 @@ function ruv(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=0&date=1")
+			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name")
+					+ "&cal=0")
 		});
+	
 	});
 	alert('done');
+	
 }
 
 function stodTvo(){
