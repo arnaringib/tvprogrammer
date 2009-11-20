@@ -11,15 +11,15 @@
 	else if($_GET['date'] == 1){
 			$date+=7;
 	}
-	else if(($_GET['date'] == 2&& $_SESSION['date'] > $date)){
+	else if(($_GET['date'] == 2 && $_SESSION['date'] > $date)){
 		$date-=7;
 	}
 	$_SESSION['date'] = $date;
 ?>
 
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="ruv()"/>
-<input type="button" value="Fyrri vika" onclick="getLastRuv()"/>
-<input type="button" value="N&aelig;sta vika" onclick="getNextRuv()"/>
+<a href="javascript:getLastRuv()">Fyrri vika</a>	
+<a href="javascript:getNextRuv()">N&aelig;sta vika</a>	
 
 <div id="test"></div>
 <table>

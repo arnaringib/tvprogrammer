@@ -176,7 +176,9 @@
 			$starttime = $event->item($i)->getAttribute('start-time');
 		
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';	 
+			//$date = substr($starttime, 8, 11);
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . 
+				 '</td></tr><tr><td><input type="hidden" id="date" name="date" value="'.$dateFrom.'" /></td></tr>';	 
 
 			$i++;
 		}
@@ -402,7 +404,7 @@
 			$uSchedule = $dom->getElementsByTagName('schedule');
 			if(strcmp($cal,"0")==0){
 				$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $date;
-				$start = 'start-time';			
+				$start = 'start-time';	
 			}
 			if(strcmp($cal,"1")==0){
 				if(strcmp($date,date('Y-m-d')) == 0){

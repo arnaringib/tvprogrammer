@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4504853" serie-id="3870" start-time="2009-11-22 08:24:00" duration="00:11:10">
+<schedule><event event-id="4508626" serie-id="6992" start-time="2009-11-20 15:35:00" duration="00:39:30">
+      <title>Leiðarljós</title>
+      <original-title/>
+      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+    </event><event event-id="4508626" serie-id="6992" start-time="2009-11-20 15:35:00" duration="00:39:30">
+      <title>Leiðarljós</title>
+      <original-title/>
+      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+    </event><event event-id="4503384" serie-id="8652" start-time="2009-11-20 17:00:00" duration="00:08:00">
+      <title>Táknmálsfréttir</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    </event><event event-id="4456459" serie-id="" start-time="2009-11-21 08:00:00" duration="02:25:00">
+      <title>Morgunstundin okkar</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+    </event><event event-id="4510433" serie-id="8758" start-time="2009-11-21 08:27:00" duration="00:23:08">
+      <title>Tóta trúður</title>
+      <original-title>Jojo's Circus</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="8" number-of-episodes="26"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    </event><event event-id="4504853" serie-id="3870" start-time="2009-11-22 08:24:00" duration="00:11:10">
       <title>Lítil prinsessa</title>
       <original-title>Little Princess</original-title>
       <description/>
@@ -17,4 +103,24 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    </event><event event-id="4512856" serie-id="8174" start-time="2009-12-01 15:10:00" duration="01:00:00">
+      <title>Útsvar: Kópavogur - Mosfellsbær</title>
+      <original-title/>
+      <description><![CDATA[Spurningakeppni sveitarfélaganna. Hér eigast við lið Kópavogs og Mosfellsbæjar. Umsjónarmenn eru Sigmar Guðmundsson og Þóra Arnórsdóttir. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="6">Íslenskir þættir</category>
+      <more-info>http://www.ruv.is/utsvar/</more-info>
     </event></schedule>

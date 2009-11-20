@@ -8,7 +8,7 @@
 	else if($_GET['date'] == 1){
 			$date+=7;
 	}
-	else if($_GET['date'] == 2 && $_SESSION['date'] > $date){
+	else if($_GET['date'] == 2){
 		$date-=7;
 	}
 	$_SESSION['date'] = $date;
