@@ -1,6 +1,9 @@
 // JavaScript Document
 var last = "0";
+var popupStatus = 0;
+var popupLoading = 0
 $(document).ready(function(){
+	$("showInfo").hide(0);
 	$.ajax({
 		method: "get",
 		url: "calender.php",
@@ -14,8 +17,8 @@ $(document).ready(function(){
 		method: "get",
 		url: "channels.php",
 		data: "channel=0",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){ loading();},
+		complete: function(){ loadingExit();}, 
 		success: function(html){
 		$("#showCal").show("slow");
 		$("#showCal").html(html);}
@@ -28,8 +31,8 @@ $(document).ready(function(){
 						method: "get",
 						url: "channels.php",
 						data: "channel=" + $(this).val(),
-						beforeSend: function(){$("#loading").show("fast");},
-						complete: function(){ $("#loading").hide("fast");}, 
+						beforeSend: function(){loading();},
+						complete: function(){ loadingExit();}, 
 						success: function(html){
 						$("#showCal").show("slow");
 						$("#showCal").html(html);}
@@ -38,6 +41,11 @@ $(document).ready(function(){
 				}
            });
 	});
+	$(document).keypress(function(e){  
+		if(e.keyCode==27 && popupStatus==1){  
+			showInfoExit();  
+		} 
+	});
 });
 
 function skjarEinn(){
@@ -45,10 +53,11 @@ function skjarEinn(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=2")
+			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=2"),
+			beforeSend: function(){loading();},
+			complete: function(){ loadingExit();}
 		});
 	});
-	alert('done');
 }
 
 function ruv(){
@@ -56,13 +65,11 @@ function ruv(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name")
-					+ "&cal=0")
+			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") + "&cal=0"),
+			beforeSend: function(){loading();},
+			complete: function(){ loadingExit();}
 		});
-	
 	});
-	alert('done');
-	
 }
 
 function stodTvo(){
@@ -70,10 +77,11 @@ function stodTvo(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&cal=1")
+			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=1"),
+			beforeSend: function(){loading();},
+			complete: function(){ loadingExit();}
 		});
 	});
-	alert('done');
 }
 
 function eyda(){
@@ -126,7 +134,6 @@ function getLast(){
 			$("#userCalender").show("slow");
 			$("#userCalender").html(html);
 		}
-		
 	});
     
 }
@@ -136,8 +143,8 @@ function getNextRuv(){
 		method:"get",
 		url: "sRuv.php",
 		data: "date=1",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
@@ -152,8 +159,8 @@ function getLastRuv(){
 		method:"get",
 		url: "sRuv.php",
 		data: "date=2",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
@@ -168,8 +175,8 @@ function getNextSkjarEinn(){
 		method:"get",
 		url: "sSkjarEinn.php",
 		data: "date=1",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
@@ -184,8 +191,8 @@ function getLastSkjarEinn(){
 		method:"get",
 		url: "sSkjarEinn.php",
 		data: "date=2",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
@@ -200,8 +207,8 @@ function getNextStod2(){
 		method:"get",
 		url: "sStod2.php",
 		data: "date=1",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
@@ -216,13 +223,12 @@ function getLastStod2(){
 		method:"get",
 		url: "sStod2.php",
 		data: "date=2",
-		beforeSend: function(){$("#loading").show("fast");},
-		complete: function(){ $("#loading").hide("fast");}, 
+		beforeSend: function(){loading();},
+		complete: function(){loadingExit();}, 
 		success: function(html){
 			$("#showCal").show("slow");
 			$("#showCal").html(html);
 		}
-		
 	});
     
 }
@@ -231,4 +237,80 @@ function cleanOld(){
 			method: "get",
 			url: "cleanCalender.php"
 		});
+}
+
+function showInfoOpen(){  
+	//loads popup only if it is disabled  
+	if(popupStatus==0){  
+//		$("#backgroundPopup").css({"opacity": "0.7"});
+		$("#showInfo").fadeIn("slow");
+		popupStatus = 1;
+	}
+}
+
+function showInfoExit(){  
+	if(popupStatus==1){  
+		$("#showInfo").fadeOut("slow");  
+		popupStatus = 0;
+	}  
+}
+
+function centerShowInfo(){  
+	var windowWidth = document.documentElement.clientWidth;  
+	var windowHeight = document.documentElement.clientHeight;  
+	var popupHeight = $("#showInfo").height();  
+	var popupWidth = $("#showInfo").width();  
+	
+	$("#showInfo").css({  
+		"position": "absolute",  
+		"top": windowHeight/2-popupHeight/2,  
+		"left": windowWidth/2-popupWidth/2  
+	}); 
+}  
+
+function showInfo(id){
+	$("#showInfo").hide("slow");
+	$.ajax({
+		method: "get",
+		url: "getShowInfo.php",
+		data: "id="+id,
+		success: function(html){
+			$("#showInfo").show("slow");
+			$("#showInfo").html(html);}
+		});
+	showInfoOpen();
+	centerShowInfo();
+}
+
+function loadingOpen(){  
+	if(popupLoading==0){  
+		$("#loading").fadeIn("slow");
+		popupLoading = 1;
+	}
+}
+
+function loadingExit(){  
+	if(popupLoading==1){  
+		$("#loading").fadeOut("slow");  
+		popupLoading = 0;
+	}  
+}
+
+function centerLoading(){  
+	var windowWidth = document.documentElement.clientWidth;  
+	var windowHeight = document.documentElement.clientHeight;  
+	var popupHeight = $("#loading").height();  
+	var popupWidth = $("#loading").width();  
+	
+	$("#loading").css({  
+		"position": "absolute",  
+		"top": windowHeight/2-popupHeight/2,  
+		"left": windowWidth/2-popupWidth/2  
+	}); 
+}  
+
+function loading(){
+	//$("#loading").hide("slow");
+	loadingOpen();
+	centerLoading();
 }

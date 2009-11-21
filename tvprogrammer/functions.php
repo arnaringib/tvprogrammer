@@ -176,9 +176,7 @@
 			$starttime = $event->item($i)->getAttribute('start-time');
 		
 			$time = substr($starttime, 11, 5); 
-			//$date = substr($starttime, 8, 11);
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . 
-				 '</td></tr><tr><td><input type="hidden" id="date" name="date" value="'.$dateFrom.'" /></td></tr>';	 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '<input type="hidden" id="date" name="date" value="'.$dateFrom.'" /></td></tr>';	 
 
 			$i++;
 		}
@@ -380,8 +378,8 @@
 				$start = 'start-time';
 			}
 			for($i = 0; $i != $event->length; $i++){
-				$title = $event->item($i)->getElementsByTagName('title');
-				if(strcmp($event->item($i)->getAttribute($start),$starttime) == 0 && strcmp(utf8_decode($title->item(0)->nodeValue),$title) == 0){
+				$title2 = $event->item($i)->getElementsByTagName('title');
+				if(strcmp($event->item($i)->getAttribute($start),$starttime) == 0 && strcmp(utf8_decode($title2->item(0)->nodeValue),utf8_decode($title)) == 0){
 					$result = true;
 					break;
 				}
@@ -393,18 +391,20 @@
 		return $result;
 	}
 	
-	function addToCalender($date, $sid, $calender,$cal){
+	function addToCalender($date, $sid, $calender, $cal){
 		$userfile = $calender;
 		if(file_exists($userfile)){
 			$dom = new DOMdocument('1.0', 'UTF-8');
 			if(!$dom->load($userfile)){
 				echo 'Can\'t load a document!';
 			}
+			$station = '';
 			$stodtvo = false;
 			$uSchedule = $dom->getElementsByTagName('schedule');
 			if(strcmp($cal,"0")==0){
 				$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $date;
-				$start = 'start-time';	
+				$start = 'start-time';
+				$station = 'Ruv';
 			}
 			if(strcmp($cal,"1")==0){
 				if(strcmp($date,date('Y-m-d')) == 0){
@@ -415,10 +415,12 @@
 				}	
 				$start = 'starttime';
 				$stodtvo = true;
+				$station = 'Stod 2';
 			}
 			if(strcmp($cal,"2")==0){
 				$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 				$start = 'start-time';
+				$station = 'Skjar einn';
 			}
 
 			$sDom = new DOMdocument('1.0', 'UTF-8');
@@ -426,7 +428,7 @@
 				echo 'Can\'t load a document!';
 			}
 			$event = $sDom->getElementsByTagName('event');
-			
+			$uEvent = $dom->getElementsByTagName('event');
 			$title = $event->item($sid)->getElementsByTagName('title');
 			if(!checkInCalender($event->item($sid)->getAttribute($start),$title->item(0)->nodeValue,$userfile,$cal)){
 				$bl = $dom->importNode($event->item($sid),true);
@@ -436,6 +438,8 @@
 					$bl->setAttribute('start-time',$attr);
 				}
 				$uSchedule->item(0)->appendChild($bl);
+				$stNode = $dom->createElement('station',$station);
+				$uEvent->item($uEvent->length-1)->appendChild($stNode);
 				$dom->save($userfile);
 			}
 		}
@@ -446,7 +450,6 @@
 	
 	function getUserCalender($calender,$date){
 		$file = $calender;
-
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
 			echo 'Can\'t load a document!';
@@ -464,7 +467,7 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
 				$time = substr($starttime, 11); 
-				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
 			}
 			$i++;
 		}
@@ -562,6 +565,7 @@
 		$event = $dom->getElementsByTagName('event');
 		$title = $dom->getElementsByTagName('title');
 		$description = $dom->getElementsByTagName('description');
+		$station = $dom->getElementsByTagName('station');
 				
 		$count = $event->length; 
 		$i = 0;
@@ -580,6 +584,7 @@
 			$duration = getDuration($event->item($i)->getAttribute('duration'));
 			$cTitle = utf8_decode($title->item($i)->nodeValue);
 			$cDescription = utf8_decode($description->item($i)->nodeValue);
+			$cStation = utf8_decode($station->item($i)->nodeValue);
 			$cDuration = getStartTime(date('Y-m-d H:i:s', mktime($time[3]+$duration[0], $time[4]+$duration[1], $time[5]+$duration[2], $time[1], $time[2], $time[0])));
 			// Create for iCalendar
 			$ev = new vevent();	
@@ -587,21 +592,15 @@
 			$ev->setProperty('dtstart', $time[0],$time[1],$time[2],$time[3],$time[4],$time[5]);
 			$ev->setProperty('dtend', $cDuration[0],$cDuration[1],$cDuration[2],$cDuration[3],$cDuration[4],$cDuration[5]);
 			$ev->setProperty('summary', $cTitle);
-			$ev->setProperty('location', "TV");
-			$ev->setProperty('description', convertIcelandic($cDescription));
+			$ev->setProperty('location', $cStation);
+			$ev->setProperty('description', $cDescription);
 			$cal->addComponent($ev);
 			
 			$i++;
 		}
 		return $cal;
 	}
-	
-	function convertIcelandic($str){
-		$isl = array('Á','á','É','é','Ý','ý','Ú','ú','Í','í','Ó','ó','Æ','æ','Þ','þ','Ö','ö');
-		$ens = array('A','a','E','e','Y','y','U','u','I','i','O','o','AE','ae','TH','th','O','o');
-		return str_replace($isl,$ens,$str);
-	}
-	
+		
 	function sortCalendar($calendar){
 		$file = $calendar;
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -609,7 +608,7 @@
 			echo 'Can\'t load a document!';
 		}
 		$event = $dom->getElementsByTagName('event');
-
+		$change = false;
 		for($i = 0; $i != $event->length; $i++){
 			$min = $i;
 			for($j = $i+1; $j != $event->length; $j++){
@@ -621,7 +620,7 @@
 					$min = $j;
 				}
 			}
-
+			// Swap
 			if($i != $min){
 				$node1 = $event->item($min);
 				$node2 = $event->item($i);
@@ -631,8 +630,33 @@
 				
 				$node1->parentNode->replaceChild($node2Clone, $node1);
 				$node2->parentNode->replaceChild($node1Clone, $node2);
+				$change = true;
 			}
 		}
-		$dom->save($calendar);
+		if($change){
+			$dom->save($calendar);
+		}
+	}
+	
+	function getShowInfo($calendar, $id){
+		$file = $calendar;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+		$title = $dom->getElementsByTagName('title');
+		$description = $dom->getElementsByTagName('description');
+		$station = $dom->getElementsByTagName('station');
+		
+		$starttime = getStartTime($event->item($id)->getAttribute('start-time'));
+		$duration = getDuration($event->item($id)->getAttribute('duration'));
+		$cTitle = utf8_decode($title->item($id)->nodeValue);
+		$cDescription = utf8_decode($description->item($id)->nodeValue);
+		$cStation = utf8_decode($station->item($id)->nodeValue);
+		
+		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
 	}
 ?>

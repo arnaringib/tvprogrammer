@@ -1,4 +1,5 @@
-<table>
+<div class="login">
+<table align="center">
 <form action="cLogin.php" method="get"> 
 <tr>
 
@@ -16,3 +17,4 @@
 </tr>
 </form>
 </table>
+</div>

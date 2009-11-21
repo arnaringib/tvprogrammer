@@ -15,8 +15,8 @@
 	$_SESSION['date'] = $date;
 ?>
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="stodTvo()"/>
-<a href="javascript:getLastStod2()">Fyrri vika</a>	
-<a href="javascript:getNextStod2()">N&aelig;sta vika</a>	
+<a href="javascript:getLastStod2()">Fyrri vika</a>
+<a href="javascript:getNextStod2()">N&aelig;sta vika</a>
 <div id="test"></div>
 <table>
 	<tr>

@@ -18,8 +18,8 @@
 <link href="main.css" rel="stylesheet" type="text/css"> 
 <form>
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="skjarEinn()"/>
-<a href="javascript:getLastSkjarEinn()">Fyrri vika</a>	
-<a href="javascript:getNextSkjarEinn">N&aelig;sta vika</a>	
+<a href="javascript:getLastSkjarEinn()">Fyrri vika</a>
+<a href="javascript:getNextSkjarEinn()">N&aelig;sta vika</a>
 
 <div id="test"></div>
 <table>

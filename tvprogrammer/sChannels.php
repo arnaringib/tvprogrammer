@@ -8,7 +8,9 @@
 		</select></td>
 	</tr>
 </table>
-
-
 <div id="showCal"></div>
-<div id="loading">N&aelig;r &iacute; g&ouml;gn, vinsamlegast hinkra&eth;u...</div>
+<div id="loading"><br />
+<br /><br />
+N&aelig;r &iacute; g&ouml;gn, vinsamlegast hinkra&eth;u...<br />
+<br />
+<img src="img/ajax-loader.gif" /></div>
