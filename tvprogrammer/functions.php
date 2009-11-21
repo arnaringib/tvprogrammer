@@ -176,13 +176,13 @@
 			$starttime = $event->item($i)->getAttribute('start-time');
 		
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '<input type="hidden" id="date" name="date" value="'.$dateFrom.'" /></td></tr>';	 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'"/>'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';	 
 
 			$i++;
 		}
 	}
 	
-	function getSkjareinn($date){
+	function getSkjareinn($date,$index){
 		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -194,7 +194,7 @@
 	
 		$count = $event->length;
 		$i = 0;
-
+		$last = 0;
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
@@ -202,13 +202,15 @@
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){	
 				$time = substr($starttime, 11); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';			
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				$last = $i+$index;
 			}
 			$i++;
 		}
+		return $last;
 	}
 	
-	function getStod2($date){
+	function getStod2($date, $index){
 		$file = 'http://stod2.visir.is/?pageid=247';
 		
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -220,17 +222,20 @@
 				
 		$count = $event->length;
 		$i = 0;
+		$last = 0;
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
 		
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				$last = $i+$index;
 			}
 				
 			$i++;
 		}
+		return $last;
 	}
 	
 	function getStod2Today(){

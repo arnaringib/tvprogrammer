@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
-      <title>Leiðarljós</title>
-      <original-title/>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>4:3</size>
-        <anamorphic>no</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>yes</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event></schedule>
+<schedule><event duration="00:50:00" event-id="COT355" language-code="ice" start-time="2009-11-22 00:50"><title>The Contender Muay Thai</title><original-title/><description>Raunveruleikasería þar sem leitað er að næstu bardagastjörnu. Áður hafa efnilegir hnefaleikakappar fengið tækifæri en nú eru það keppendur í asísku bardagalistinni Muay Thai, sem er ein allra vinsælasta útgáfan af sparkboxi í heiminum.</description><short-description/><episode number="14" number-of-episodes="15"/><live>No</live><rerun>Yes</rerun><recorde-show>No</recorde-show><subtitle>No</subtitle><aspect-ratio><size/><anamorphic/><letterbox/></aspect-ratio><genre value="">Lifestyle &amp; Entertainment</genre><more-info/><station>Skjar einn</station></event><event event_id="503012877" duration="0:45" start-time="2009-11-23 00:10:00">
+    <service>STOD2</service>
+    <title>60 Minutes</title>
+    <org_title>60 mínútur</org_title>
+    <description>Glænýr þáttur í virtustu og vinsælustu fréttaskýringaþáttaröð í heimi þar sem reyndustu fréttaskýrendur Bandaríkjanna fjalla um mikilvægustu málefni líðandi stundar og taka einstök viðtöl við heimsþekkt fólk.</description>
+    <rating value="0">
+    </rating>
+    <freetoair value="false">
+    </freetoair>
+    <live value="false">
+    </live>
+    <premier value="false">
+    </premier>
+    <aspectratio value="4/3">
+    </aspectratio>
+  <station>Stod 2</station></event><event event_id="503022702" duration="1:35" start-time="2009-11-28 00:45:00">
+    <service>STOD2</service>
+    <title>Himinn og haf</title>
+    <org_title>The Water is Wide</org_title>
+    <description>Áhrifamikil mynd sem byggð er á sögu Pat Conroy's sem var kennari í Suður Karólínu á sjöunda áratugnum, þegar aðskilnaðarstefnan þótti eðlileg. Hann beitti sér fyrir því að færa ástandið í betra horf og færa fátækum og þeim sem minna máttu sín von og betra líf.</description>
+    <director>John Kent Harrison</director>
+    <actors>Alfre Woodard; Jeff Hephner; James Murtaugh</actors>
+    <rating value="0">
+    </rating>
+    <freetoair value="false">
+    </freetoair>
+    <live value="false">
+    </live>
+    <premier value="true">
+    </premier>
+    <aspectratio value="16/9">
+    </aspectratio>
+  <station>Stod 2</station></event><event duration="00:30:00" event-id="RCK308" language-code="ice" start-time="2009-11-29 17:45"><title>30 Rock</title><original-title>30 Rock 3</original-title><description>Bandarísk þáttaröð sem hlotið hefur Emmy-verðlaunin sem besta gamanserían undanfarin þrjú ár.</description><short-description>Flensa herjar á starfsliðið en það er ekki hægt að bólusetja alla og aðeins útvaldir fá sprautu. Liz dreymir um að komast í sólarfrí en sýnir samstöðu með samstarfsfólkinu og neitar að fara í sprautu. Salma Hayek leikur gestahlutverk í þessum þætti.</short-description><episode number="8" number-of-episodes="22"/><live>No</live><rerun>Yes</rerun><recorde-show>No</recorde-show><subtitle>No</subtitle><aspect-ratio><size/><anamorphic/><letterbox/></aspect-ratio><genre value="">Comedy</genre><more-info/><station>Skjar einn</station></event></schedule>
