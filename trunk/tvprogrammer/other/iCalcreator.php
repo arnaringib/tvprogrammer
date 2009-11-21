@@ -45,7 +45,7 @@ if ($pos   !== false) {
 */
             /* only for phpversion 5.x, date management, default timezone setting */
 if( substr( phpversion(), 0, 1) >= '5' ) // && ( 'UTC' == date_default_timezone_get() )) {
-  date_default_timezone_set( 'GMT' );
+  date_default_timezone_set( 'Europe/Reykjavik' );
             /* version string, do NOT remove!! */
 define( 'ICALCREATOR_VERSION', 'iCalcreator 2.6' );
 /*********************************************************************************/

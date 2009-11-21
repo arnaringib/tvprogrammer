@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+<event event-id="4456460" serie-id="" start-time="2009-11-22 08:00:00" duration="01:00:00">
+      <title>Morgunstundin okkar</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+    <station>R�v</station></event>
+	<event event-id="4513298" serie-id="8998" start-time="2009-11-22 11:40:00" duration="00:19:52">
+      <title>Paradís slöngunnar</title>
+      <original-title>Slangens paradis</original-title>
+      <description><![CDATA[Danskur fræðsluþáttur. Allar götur frá brottrekstrinum úr paradís til Hollywood-hrollvekna okkar tíma hefur slangan verið dyggur fylginautur óttans, en hvernig stendur á því? Trúarbragðasagnfræðingurinn Mikael Rothstein rekur slóð slöngunnar frá Evu til Indiana Jones, og dularfulla innrás hennar í hugi okkar og hjörtu. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="4">Fræðsla</category>
+      <more-info>http://dagskra.ruv.is/nanar/8998/</more-info>
+    <station>Ruv</station></event></schedule>

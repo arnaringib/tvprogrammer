@@ -1,2 +1,1 @@
-<a href="index.php?pageid=2">Heim</a> - <a href="index.php?pageid=5">B&aelig;ta vi&eth; &thorn;&aacute;ttum</a> - <a href="index.php?pageid=4">Breyta m&iacute;num uppl&yacute;singum</a> - 
-<a href="index.php?pageid=3">&Uacute;tskr&aacute;</a>
+<a href="index.php?pageid=2">Mitt dagatal</a> - <a href="index.php?pageid=5">B&aelig;ta vi&eth; &thorn;&aacute;ttum</a>

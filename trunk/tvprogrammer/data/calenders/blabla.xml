@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
+      <title>Leiðarljós</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event></schedule>

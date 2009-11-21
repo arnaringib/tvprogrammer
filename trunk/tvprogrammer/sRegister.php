@@ -6,7 +6,8 @@
 		}
 	}
 ?>
-<table >
+<div class="register">
+<table align="center">
 <form action="cRegister.php" method="get">
 <tr>
 	<td>Nafn:</td><td><input type="text" name="name" <?php if($fail) echo 'value=' . $_GET['name']; ?> /></td><td></td>
@@ -28,3 +29,4 @@
 </tr>
 </form>
 </table>
+</div>
