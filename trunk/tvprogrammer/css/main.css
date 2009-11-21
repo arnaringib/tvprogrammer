@@ -60,6 +60,18 @@ div.login{
 	width:750px;
 }
 
+#calLoading{
+	text-align:center;
+	display:none;  
+	color:#FFFFFF;
+	position:fixed; 
+	height:150px;
+	width:300px;
+	border:#666666 thin solid;
+	-moz-border-radius:10px;
+	background:#000033;
+}
+
 #loading{
 	text-align:center;
 	display:none;  

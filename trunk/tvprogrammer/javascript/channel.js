@@ -2,13 +2,14 @@
 var last = "0";
 var popupStatus = 0;
 var popupLoading = 0
+var popupCalLoading = 0;
 $(document).ready(function(){
 	$("showInfo").hide(0);
 	$.ajax({
 		method: "get",
 		url: "calender.php",
-		beforeSend: function(){$("#calLoading").show("fast"); cleanOld();},
-		complete: function(){ $("#calLoading").hide("fast");}, 
+		beforeSend: function(){calLoading(); cleanOld();},
+		complete: function(){ calLoadingExit();}, 
 		success: function(html){
 		$("#userCalender").show("slow");
 		$("#userCalender").html(html);}
@@ -53,7 +54,7 @@ function skjarEinn(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=2"),
+			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=2"),
 			beforeSend: function(){loading();},
 			complete: function(){ loadingExit();}
 		});
@@ -65,7 +66,7 @@ function ruv(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") + "&cal=0"),
+			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") + "&cal=0"),
 			beforeSend: function(){loading();},
 			complete: function(){ loadingExit();}
 		});
@@ -77,7 +78,7 @@ function stodTvo(){
 		$.ajax({
 			method: "get",
 			url: "updateCalander.php",
-			data: ($(this).attr("name") + "=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=1"),
+			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=1"),
 			beforeSend: function(){loading();},
 			complete: function(){ loadingExit();}
 		});
@@ -92,8 +93,8 @@ function eyda(){
 			method: "get",
 			url: "deleteFromCalender.php",
 			data: ("id=" + $(this).val()),
-			beforeSend: function(){$("#calLoading").show("fast");},
-			complete: function(){ $("#calLoading").hide("fast");}, 
+			beforeSend: function(){calLoading();},
+			complete: function(){ calLoadingExit();}, 
 			success: function(html){
 				$.ajax({
 					method: "get",
@@ -111,8 +112,8 @@ function getNext(){
 			method:"get",
 			url: "calender.php",
 			data: "date=1",
-			beforeSend: function(){$("#calLoading").show("fast");},
-			complete: function(){ $("#calLoading").hide("fast");}, 
+			beforeSend: function(){calLoading();},
+			complete: function(){ calLoadingExit();}, 
 			success: function(html){
 				$("#userCalender").hide("slow");
 				$("#userCalender").show("slow");
@@ -127,8 +128,8 @@ function getLast(){
 		method:"get",
 		url: "calender.php",
 		data: "date=2",
-		beforeSend: function(){$("#calLoading").show("fast");},
-		complete: function(){ $("#calLoading").hide("fast");}, 
+		beforeSend: function(){calLoading();},
+		complete: function(){ calLoadingExit();}, 
 		success: function(html){
 			$("#userCalender").hide("slow");
 			$("#userCalender").show("slow");
@@ -206,7 +207,7 @@ function getNextStod2(){
 	$.ajax({
 		method:"get",
 		url: "sStod2.php",
-		data: "date=1",
+		data: "date=1&" + $("index").val(),
 		beforeSend: function(){loading();},
 		complete: function(){ loadingExit();}, 
 		success: function(html){
@@ -222,7 +223,7 @@ function getLastStod2(){
 	$.ajax({
 		method:"get",
 		url: "sStod2.php",
-		data: "date=2",
+		data: "date=2&" + $("index").val()*-1,
 		beforeSend: function(){loading();},
 		complete: function(){loadingExit();}, 
 		success: function(html){
@@ -313,4 +314,37 @@ function loading(){
 	//$("#loading").hide("slow");
 	loadingOpen();
 	centerLoading();
+}
+
+function calLoadingOpen(){  
+	if(popupCalLoading==0){  
+		$("#calLoading").fadeIn("slow");
+		popupCalLoading = 1;
+	}
+}
+
+function calLoadingExit(){  
+	if(popupCalLoading==1){  
+		$("#calLoading").fadeOut("slow");  
+		popupCalLoading = 0;
+	}  
+}
+
+function centerCalLoading(){  
+	var windowWidth = document.documentElement.clientWidth;  
+	var windowHeight = document.documentElement.clientHeight;  
+	var popupHeight = $("#calLoading").height();  
+	var popupWidth = $("#calLoading").width();  
+	
+	$("#calLoading").css({  
+		"position": "absolute",  
+		"top": windowHeight/2-popupHeight/2,  
+		"left": windowWidth/2-popupWidth/2  
+	}); 
+}  
+
+function calLoading(){
+	//$("#loading").hide("slow");
+	calLoadingOpen();
+	centerCalLoading();
 }
