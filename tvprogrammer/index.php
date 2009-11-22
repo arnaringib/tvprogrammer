@@ -18,7 +18,7 @@ include('functions.php');
 	<div class="user"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sUser.php');?></div>
 	<?php } ?>
 	<div class="header">
-		<div class="logo"><a href="#"><img src="img/logo.png"/></a></div>
+		<div class="logo"><a href="/verkefni/index.php?pageid=2"><img src="img/logo.png"/></a></div>
 		<div class="links"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sLinks.php'); ?></div>
 	</div>
 	<div class="content">

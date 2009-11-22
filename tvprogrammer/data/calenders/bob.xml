@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
+<schedule><event event-id="4512778" serie-id="8092" start-time="2009-11-22 21:05:00" duration="01:29:34">
+      <title>Sunnudagsbíó - Í frjálsu falli</title>
+      <original-title>Freefall</original-title>
+      <description><![CDATA[Bresk sjónvarpsmynd frá 2009. Þetta er samtímasaga sem segir frá áhrifum fjármálakreppunnar á líf þriggja manna, tveggja bankamanna og alþýðumanns sem lætur ginnast af gylliboði annars þeirra um húsnæðislán á kostakjörum. Leikstjóri er Dominic Savage og meðal leikenda eru Dominic Cooper, Aidan Gillen, Joseph Mawle, Rosamund Pike og Sarah Harding úr söngflokknum Girls Aloud. 
+]]></description>
+      <short-description><![CDATA[Bresk sjónvarpsmynd frá 2009]]></short-description>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="7">Kvikmyndir</category>
+      <more-info>http://dagskra.ruv.is/nanar/8092/</more-info>
+    <station>Ruv</station></event><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
       <title>Leiðarljós</title>
       <original-title/>
       <description/>
@@ -17,7 +38,7 @@
         <open>yes</open>
         <closed>no</closed>
       </subtitles>
-    <station>Ruv</station></event><event event-id="4510315" serie-id="4162" start-time="2009-11-24 17:52:00" duration="00:23:03">
+    <station>Ruv</station></event><event duration="00:35:00" event-id="UST105" language-code="ice" start-time="2009-11-24 00:10"><title>United States of Tara</title><original-title>United States of Tara 1</original-title><description/><short-description>Tara þarf að víkja þegar hin villta, tryllta "T" tekur yfir líkama hennar og fer út að skemmta sér. Max og Charmaine elta hana og Marshall nýtir tækifærið og heldur partí á heimilinu.</short-description><episode number="5" number-of-episodes="12"/><live>No</live><rerun>Yes</rerun><recorde-show>No</recorde-show><subtitle>No</subtitle><aspect-ratio><size/><anamorphic/><letterbox/></aspect-ratio><genre value=""/><more-info/><station>Skjar einn</station></event><event event-id="4510315" serie-id="4162" start-time="2009-11-24 17:52:00" duration="00:23:03">
       <title>Kóngulóarbörnin í Sólarlaut</title>
       <original-title>Miss Spider</original-title>
       <description/>

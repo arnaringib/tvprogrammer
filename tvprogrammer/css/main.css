@@ -39,7 +39,7 @@ div.header{
 
 div.content{
 	width: 800px;
-	position:fixed;
+	position:absolute;
 	-moz-border-radius:10px;
 	border:#666666 thin solid;
 	background:#000033;
@@ -200,20 +200,14 @@ table{
 	font-size:14px;
 	background-color:#003366;
 }
-#tableCal table{
-/*padding-top:0px;
-height:50%;*/
-
-}
-#tableCal table.tableContent td{
-
-/*background-color:#FFFFFF;
-padding-top:0px;*/	
-}
 
 img{
 	border-style:none;
 }
+
+#tableCal tr.content{
+	vertical-align:text-top;
+	}
 
 input{
 	background-color:#05327C;

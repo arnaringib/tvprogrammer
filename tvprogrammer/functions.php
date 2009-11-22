@@ -477,15 +477,15 @@
 		$count = $event->length;
 		$i = 0;
 		$k = 1;
-		echo '<table>';
+		echo '<table id="tableContent">';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('start-time');
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){
-	
+				if($i%2 == 1){$alt = "alt";} else{$alt="none";}
 				$time = substr($starttime, 11, 5); 
-				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
+				echo '<tr id="row'.$i.'" class="' . $alt . '"><td valign="bottom"><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2" class="' . $alt . '"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
 			}
 			$i++;
 		}
