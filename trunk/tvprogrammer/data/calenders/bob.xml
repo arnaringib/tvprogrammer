@@ -1,26 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4472642" serie-id="8070" start-time="2009-11-22 18:00:00" duration="00:28:11">
-      <title>Stundin okkar</title>
-      <original-title/>
-      <description><![CDATA[Það verður spennandi að vita hvað Björgvini Franz og Björvínu Franzínu mús dettur í hug í þættinum og hverjir koma í heimsókn til þeirra. Textað á síðu 888 í Textavarpi.]]></description>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>yes</closed>
-      </subtitles>
-      <category value="1">Barnaefni</category>
-      <more-info>http://www.ruv.is/stundinokkar/</more-info>
-    <station>Ruv</station></event><event event-id="4497819" serie-id="8599" start-time="2009-11-22 19:00:00" duration="00:27:00">
-      <title>Fréttir</title>
+<schedule><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
+      <title>Leiðarljós</title>
       <original-title/>
       <description/>
       <short-description/>
@@ -29,141 +9,12 @@
       <live>no</live>
       <rerun>no</rerun>
       <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event><event event-id="4498584" serie-id="8601" start-time="2009-11-22 19:30:00" duration="00:03:00">
-      <title>Veðurfréttir</title>
-      <original-title/>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event><event event-id="4463774" serie-id="4408" start-time="2009-11-23 21:15:00" duration="00:42:31">
-      <title>Glæpahneigð</title>
-      <original-title>Criminal Minds</original-title>
-      <description><![CDATA[Bandarísk þáttaröð um sérsveit lögreglumanna sem hefur þann starfa að rýna í persónuleika hættulegra glæpamanna til þess að reyna að sjá fyrir og koma í veg fyrir frekari illvirki þeirra. Meðal leikenda eru Joe Mantegna, Thomas Gibson og Shemar Moore.]]></description>
-      <short-description/>
-      <rating>12</rating>
-      <episode number="61" number-of-episodes="65"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
       <subtitles>
         <open>yes</open>
-        <closed>no</closed>
-      </subtitles>
-      <category value="2">Framhaldsþættir</category>
-      <more-info>http://dagskra.ruv.is/nanar/4408/</more-info>
-    <station>Ruv</station></event><event event-id="4498149" serie-id="8598" start-time="2009-11-23 22:00:00" duration="00:15:00">
-      <title>Tíufréttir</title>
-      <original-title/>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event><event event-id="4472327" serie-id="8150" start-time="2009-11-24 00:00:00" duration="00:30:00">
-      <title>Kastljós</title>
-      <original-title/>
-      <description><![CDATA[Endursýndur þáttur]]></description>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>yes</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event><event event_id="503070419" duration="2:15" start-time="2009-11-24 00:05:00">
-    <service>STOD2</service>
-    <title>Glastonbury</title>
-    <org_title>Glastonbury</org_title>
-    <description>Heimildamynd sem gerð var í tilefni að 30 ára sögu einnar nafntoguðustu og stærstu tónlistarhátíðar í heimi, Glastonbury-hátíðarinnar, sem haldin er árlega á Englandi. Í myndinni koma fram margar af skærustu poppstjörnum þessa tímabils, þ.m.t. Paul McCartney, Radiohead, David Bowie, Oasis, Coldplay, Pink Floyd, R.E.M., að ógleymdri Björk Guðmundsdóttur.</description>
-    <director>Julien Temple</director>
-    <actors>David Bowie; Björk; James Brown; Nick Cave; Billy Bragg</actors>
-    <rating value="2">
-    </rating>
-    <freetoair value="false">
-    </freetoair>
-    <live value="false">
-    </live>
-    <premier value="true">
-    </premier>
-    <aspectratio value="16/9">
-    </aspectratio>
-  <station>Stod 2</station></event><event event-id="4506834" serie-id="8174" start-time="2009-11-24 15:35:00" duration="00:57:30">
-      <title>Útsvar: Akranes - Fjallabyggð</title>
-      <original-title/>
-      <description><![CDATA[Spurningakeppni sveitarfélaganna. Að þessu sinni mætast lið Akraness og Fjallabyggðar. Umsjónarmenn eru Sigmar Guðmundsson og Þóra Arnórsdóttir. e.]]></description>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>yes</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-      <category value="6">Íslenskir þættir</category>
-      <more-info>http://www.ruv.is/utsvar/</more-info>
-    <station>Ruv</station></event><event event-id="4510285" serie-id="5069" start-time="2009-11-24 17:30:00" duration="00:21:37">
-      <title>Frumskógar Goggi</title>
-      <original-title>George of the Jungle</original-title>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="8" number-of-episodes="26"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
         <closed>no</closed>
       </subtitles>
     <station>Ruv</station></event><event event-id="4510315" serie-id="4162" start-time="2009-11-24 17:52:00" duration="00:23:03">
@@ -178,6 +29,42 @@
       <aspect-ratio>
         <size>4:3</size>
         <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4461629" serie-id="6992" start-time="2009-11-25 16:35:00" duration="00:39:33">
+      <title>Leiðarljós</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4503389" serie-id="8652" start-time="2009-11-25 17:15:00" duration="00:08:00">
+      <title>Táknmálsfréttir</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
       <subtitles>
@@ -224,24 +111,6 @@
       </subtitles>
       <category value="1">Barnaefni</category>
       <more-info>http://dagskra.ruv.is/nanar/5172/</more-info>
-    <station>Ruv</station></event><event event-id="4508630" serie-id="6992" start-time="2009-11-27 15:35:00" duration="00:39:40">
-      <title>Leiðarljós</title>
-      <original-title/>
-      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>yes</rerun>
-      <aspect-ratio>
-        <size>4:3</size>
-        <anamorphic>no</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>yes</open>
-        <closed>no</closed>
-      </subtitles>
     <station>Ruv</station></event><event event-id="4513442" serie-id="9106" start-time="2009-11-27 18:00:00" duration="00:22:32">
       <title>Galdrakrakkar</title>
       <original-title>Disney Wizards of Waverly Place</original-title>
@@ -263,24 +132,6 @@
       </subtitles>
       <category value="1">Barnaefni</category>
       <more-info>http://dagskra.ruv.is/nanar/9106/</more-info>
-    <station>Ruv</station></event><event event-id="4497824" serie-id="8599" start-time="2009-11-27 19:00:00" duration="00:27:00">
-      <title>Fréttir</title>
-      <original-title/>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
     <station>Ruv</station></event><event event-id="4454758" serie-id="" start-time="2009-11-28 01:50:00" duration="00:10:00">
       <title>Útvarpsfréttir í dagskrárlok</title>
       <original-title/>
@@ -302,6 +153,24 @@
       <short-description/>
       <rating/>
       <episode number="14" number-of-episodes="52"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4513371" serie-id="4929" start-time="2009-11-28 09:02:00" duration="00:10:34">
+      <title>Ólivía</title>
+      <original-title>Olivia</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="28" number-of-episodes="52"/>
       <live>no</live>
       <rerun>no</rerun>
       <aspect-ratio>
