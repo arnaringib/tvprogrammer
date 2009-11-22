@@ -2,7 +2,7 @@
 <div class="ical"><a href="createCalender.php"><img src="img/ical.png" /></a></div>
 <div id="userCalender"></div>
 <div id="last"><a href="javascript:getLast()">Fyrri vika</a></div>
-<div id="next"><a href="javascript:getNext()">Næsta vika</a></div>
+<div id="next"><a href="javascript:getNext()">N&aelig;sta vika</a></div>
 <div id="calLoading"><br />
 <br /><br />
 Veri&eth; er a&eth; uppf&aelig;ra dagatali&eth; &thorn;itt, vinsamlegast hinkra&eth;u...<br />
