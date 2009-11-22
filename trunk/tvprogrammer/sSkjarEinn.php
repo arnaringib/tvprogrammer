@@ -19,6 +19,14 @@
 		$index = $_GET['index'];
 	}
 ?>
+<script src="jquery.js"></script>
+		<script>
+		$(document).ready(function()
+		{
+		  $("tr:even").css("background-color", "#000033");
+		  $("tr:odd").css("background-color", "#003366");
+		});
+</script>
 <form>
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="skjarEinn()"/>
 <div id="last"><a href="javascript:getLastSkjarEinn()">Fyrri vika</a></div>

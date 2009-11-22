@@ -14,6 +14,14 @@
 	}
 	$_SESSION['date'] = $date;
 ?>
+<script src="jquery.js"></script>
+		<script>
+		$(document).ready(function()
+		{
+		  $("tr:even").css("background-color", "#000033");
+		  $("tr:odd").css("background-color", "#003366");
+		});
+</script>	
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="ruv()"/>
 <div id="last"><a href="javascript:getLastRuv()">Fyrri vika</a></div>
 <div id="next"><a href="javascript:getNextRuv()">N&aelig;sta vika</a></div>
