@@ -476,32 +476,20 @@
 	
 		$count = $event->length;
 		$i = 0;
-		$k = 1;
 		echo '<table id="tableContent">';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('start-time');
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){
-				if($i%2 == 1){$alt = "alt";} else{$alt="none";}
 				$time = substr($starttime, 11, 5); 
-				echo '<tr id="row'.$i.'" class="' . $alt . '"><td valign="bottom"><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2" class="' . $alt . '"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row 2'.$i.'"><td><a href="javascript:showInfo('.$i.')">' . substr(htmlentities(utf8_decode($title->item(0)->nodeValue)), 0, 41) . '</a></td></tr>';			
 			}
 			$i++;
 		}
 		echo '</table>';
-		/*while($k != $count-1){
-			$title = $event->item($k)->getElementsByTagName('title');
-			$starttime = $event->item($k)->getAttribute('start-time');
-			
-			if(strcmp(substr($starttime,0,10),$date) == 0){
-	
-				$time = substr($starttime, 11); 
-				echo '<tr class="alt" id="row'.$k.'"><td id="2"><input type="checkbox" name="" value="'.$k	.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
-			}
-			$k += 2;
-		}*/
 	}
+
 	
 	function removeFromCalender($calender,$id){
 		$file = $calender;

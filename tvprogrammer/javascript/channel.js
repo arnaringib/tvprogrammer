@@ -4,6 +4,7 @@ var popupStatus = 0;
 var popupLoading = 0
 var popupCalLoading = 0;
 $(document).ready(function(){
+	
 	$("showInfo").hide(0);
 	$("#last").hide("slow");
 	$("#next").hide("slow");

@@ -13,6 +13,14 @@
 	}
 	$_SESSION['date'] = $date;
 ?>	
+<script src="jquery.js"></script>
+		<script>
+		$(document).ready(function()
+		{
+		  $("tr:even").css("background-color", "#000033");
+		  $("tr:odd").css("background-color", "#003366");
+		});
+</script>
 <table id="tableCal">
 	<tr>
 		<tr class="header">
