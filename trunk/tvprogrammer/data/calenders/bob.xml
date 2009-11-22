@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4512778" serie-id="8092" start-time="2009-11-22 21:05:00" duration="01:29:34">
-      <title>Sunnudagsbíó - Í frjálsu falli</title>
-      <original-title>Freefall</original-title>
-      <description><![CDATA[Bresk sjónvarpsmynd frá 2009. Þetta er samtímasaga sem segir frá áhrifum fjármálakreppunnar á líf þriggja manna, tveggja bankamanna og alþýðumanns sem lætur ginnast af gylliboði annars þeirra um húsnæðislán á kostakjörum. Leikstjóri er Dominic Savage og meðal leikenda eru Dominic Cooper, Aidan Gillen, Joseph Mawle, Rosamund Pike og Sarah Harding úr söngflokknum Girls Aloud. 
-]]></description>
-      <short-description><![CDATA[Bresk sjónvarpsmynd frá 2009]]></short-description>
+<schedule><event event-id="4513627" serie-id="9233" start-time="2009-11-22 22:40:00" duration="00:47:19">
+      <title>Listin sprettur af lífinu sjálfu</title>
+      <original-title/>
+      <description><![CDATA[Heimildamynd um Svavar Guðnason listmálara eftir Þór Elís Pálsson. 18. nóvember voru liðin 100 ár frá fæðingu Svavars. Myndin er frá 1991.]]></description>
+      <short-description><![CDATA[Heimildamynd um Svavar Guðnason listmálara]]></short-description>
       <rating/>
       <episode number="1" number-of-episodes="1"/>
       <live>no</live>
       <rerun>no</rerun>
       <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
       <subtitles>
         <open>yes</open>
-        <closed>no</closed>
+        <closed>yes</closed>
       </subtitles>
-      <category value="7">Kvikmyndir</category>
-      <more-info>http://dagskra.ruv.is/nanar/8092/</more-info>
+      <category value="6">Íslenskir þættir</category>
+      <more-info>http://dagskra.ruv.is/nanar/9233/</more-info>
     <station>Ruv</station></event><event event-id="4461627" serie-id="6992" start-time="2009-11-23 16:35:00" duration="00:39:40">
       <title>Leiðarljós</title>
       <original-title/>
@@ -56,6 +55,26 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event-id="4508546" serie-id="3895" start-time="2009-11-24 23:20:00" duration="00:50:00">
+      <title>Dauðir rísa</title>
+      <original-title>Waking The Dead V</original-title>
+      <description><![CDATA[Breskur sakamálaflokkur um Peter Boyd og félaga hans í þeirri deild lögreglunnar sem rannsakar eldri mál sem aldrei hafa verið upplýst. Hver saga er sögð í tveimur þáttum. Þættirnir hafa unnið til Emmyverðlauna sem besta leikna sjónvarpsefnið. Aðalhlutverk leika Trevor Eve, Sue Johnston, Félicité Du Jeu, Esther Hall og Wil Johnson. Atriði í þáttunum eru ekki við hæfi barna. e.]]></description>
+      <short-description/>
+      <rating>16</rating>
+      <episode number="7" number-of-episodes="12"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="2">Framhaldsþættir</category>
+      <more-info>http://dagskra.ruv.is/nanar/3895/</more-info>
     <station>Ruv</station></event><event event-id="4461629" serie-id="6992" start-time="2009-11-25 16:35:00" duration="00:39:33">
       <title>Leiðarljós</title>
       <original-title/>
@@ -132,7 +151,7 @@
       </subtitles>
       <category value="1">Barnaefni</category>
       <more-info>http://dagskra.ruv.is/nanar/5172/</more-info>
-    <station>Ruv</station></event><event event-id="4513442" serie-id="9106" start-time="2009-11-27 18:00:00" duration="00:22:32">
+    <station>Ruv</station></event><event duration="00:50:00" event-id="NTM460" language-code="ice" start-time="2009-11-27 16:10"><title>America's Next Top Model</title><original-title>America's Next Top Model 13</original-title><description>Bandarísk raunveruleikasería þar sem Tyra Banks leitar að næstu ofurfyrirsætu.</description><short-description>Stúlkunum níu sem eftir eru er kennt að dansa án þess að sýna svipbrigði. Myndatakan fer fram í Las Vegas þar sem stúlkurnar fá innblástur frá fjölleikasýningunni Cirque du Soleil. Gestadómari er ofurfyrirsætan Josie Maran.</short-description><episode number="6" number-of-episodes="13"/><live>No</live><rerun>Yes</rerun><recorde-show>No</recorde-show><subtitle>No</subtitle><aspect-ratio><size/><anamorphic/><letterbox/></aspect-ratio><genre value="">Lifestyle &amp; Entertainment</genre><more-info/><station>Skjar einn</station></event><event event-id="4513442" serie-id="9106" start-time="2009-11-27 18:00:00" duration="00:22:32">
       <title>Galdrakrakkar</title>
       <original-title>Disney Wizards of Waverly Place</original-title>
       <description><![CDATA[Bandarísk þáttaröð um göldrótt systkini í New York. Meðal leikenda eru Selena Gomez, David Henrie, Jake T. Austin, Maria Canals-Barrera, David DeLuise og Jennifer Stone.
@@ -185,6 +204,24 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event-id="4510434" serie-id="8758" start-time="2009-11-28 08:27:00" duration="00:23:08">
+      <title>Tóta trúður</title>
+      <original-title>Jojo's Circus</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="9" number-of-episodes="26"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
     <station>Ruv</station></event><event event-id="4513371" serie-id="4929" start-time="2009-11-28 09:02:00" duration="00:10:34">
       <title>Ólivía</title>
       <original-title>Olivia</original-title>
@@ -221,6 +258,26 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event-id="4510887" serie-id="5850" start-time="2009-11-28 14:43:00" duration="00:52:16">
+      <title>Stærri en Barbie</title>
+      <original-title>Bigger Than Barbie</original-title>
+      <description><![CDATA[Norsk heimildamynd um konur í Suður-Afríku sem selja skartgripi og hannyrðir til ýmissa landa og við góðar undirtektir. Höfundur myndarinnar er Tina Davis. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="4">Fræðsla</category>
+      <more-info>http://dagskra.ruv.is/nanar/5850/</more-info>
     <station>Ruv</station></event><event event-id="4512979" serie-id="26394" start-time="2009-12-02 17:05:00" duration="00:05:53">
       <title>Jóladagatalið - Klængur sniðugi</title>
       <original-title/>
@@ -241,4 +298,41 @@
       </subtitles>
       <category value="1">Barnaefni</category>
       <more-info>http://dagskra.ruv.is/nanar/26394/</more-info>
-    <station>Ruv</station></event></schedule>
+    <station>Ruv</station></event><event event-id="4512734" serie-id="5030" start-time="2009-12-04 22:30:00" duration="01:08:12">
+      <title>Taggart - Leigjandinn</title>
+      <original-title>Taggart: Tenement</original-title>
+      <description><![CDATA[Skosk sakamálamynd þar sem rannsóknarlögreglumenn í Glasgow fást við snúið sakamál. Meðal leikenda eru Alex Norton, Blythe Duff, Colin McCredie og John Michie. Atriði í myndinni eru ekki við hæfi barna.]]></description>
+      <short-description/>
+      <rating>16</rating>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="7">Kvikmyndir</category>
+      <more-info>http://dagskra.ruv.is/nanar/5030/</more-info>
+    <station>Ruv</station></event><event event_id="503083310" duration="0:05" start-time="2009-11-22 07:20:00">
+    <service>STOD2</service>
+    <title>Boowa and Kwala</title>
+    <org_title>
+    </org_title>
+    <description>
+    </description>
+    <rating value="0">
+    </rating>
+    <freetoair value="false">
+    </freetoair>
+    <live value="false">
+    </live>
+    <premier value="false">
+    </premier>
+    <aspectratio value="4/3">
+    </aspectratio>
+  <station>Stod 2</station></event></schedule>

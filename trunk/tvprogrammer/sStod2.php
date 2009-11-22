@@ -20,6 +20,8 @@
 	}
 ?>
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="stodTvo()"/>
+<div id="last"><a href="javascript:getLastStod2()">Fyrri vika</a></div>
+<div id="next"><a href="javascript:getNextStod2()">N&aelig;sta vika</a></div>
 
 <div id="test"></div>
 <table id="tableCal">
