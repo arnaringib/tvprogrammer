@@ -1,1 +1,0 @@
-<a href="javascript:getLast()">Fyrri vika</a>

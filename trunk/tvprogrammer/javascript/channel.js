@@ -5,12 +5,16 @@ var popupLoading = 0
 var popupCalLoading = 0;
 $(document).ready(function(){
 	$("showInfo").hide(0);
+	$("#last").hide("slow");
+	$("#next").hide("slow");
 	$.ajax({
 		method: "get",
 		url: "calender.php",
 		beforeSend: function(){calLoading(); cleanOld();},
 		complete: function(){ calLoadingExit();}, 
 		success: function(html){
+		$("#last").show("slow");
+		$("#next").show("slow");
 		$("#userCalender").show("slow");
 		$("#userCalender").html(html);}
 	});
@@ -32,8 +36,8 @@ $(document).ready(function(){
 						method: "get",
 						url: "channels.php",
 						data: "channel=" + $(this).val(),
-						beforeSend: function(){loading();},
-						complete: function(){ loadingExit();}, 
+						beforeSend: function(){uploading();},
+						complete: function(){ uploadingExit();}, 
 						success: function(html){
 						$("#showCal").show("slow");
 						$("#showCal").html(html);}
@@ -55,8 +59,8 @@ function skjarEinn(){
 			method: "get",
 			url: "updateCalander.php",
 			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=2"),
-			beforeSend: function(){loading();},
-			complete: function(){ loadingExit();}
+			beforeSend: function(){uploading();},
+			complete: function(){ uploadingExit();}
 		});
 	});
 }
@@ -67,8 +71,8 @@ function ruv(){
 			method: "get",
 			url: "updateCalander.php",
 			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") + "&cal=0"),
-			beforeSend: function(){loading();},
-			complete: function(){ loadingExit();}
+			beforeSend: function(){uploading();},
+			complete: function(){ uploadingExit();}
 		});
 	});
 }
@@ -79,8 +83,8 @@ function stodTvo(){
 			method: "get",
 			url: "updateCalander.php",
 			data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=1"),
-			beforeSend: function(){loading();},
-			complete: function(){ loadingExit();}
+			beforeSend: function(){uploading();},
+			complete: function(){ uploadingExit();}
 		});
 	});
 }
@@ -297,25 +301,52 @@ function loadingExit(){
 	}  
 }
 
+function uploadingOpen(){  
+	if(popupLoading==0){  
+		$("#uploading").fadeIn("slow");
+		popupLoading = 1;
+	}
+}
+
+function uploadingExit(){  
+	if(popupLoading==1){  
+		$("#uploading").fadeOut("slow");  
+		popupLoading = 0;
+	}  
+}
+
 function centerLoading(){  
 	var windowWidth = document.documentElement.clientWidth;  
 	var windowHeight = document.documentElement.clientHeight;  
 	var popupHeight = $("#loading").height();  
 	var popupWidth = $("#loading").width();  
-	
 	$("#loading").css({  
-		"position": "absolute",  
+		"position": "fixed",  
 		"top": windowHeight/2-popupHeight/2,  
 		"left": windowWidth/2-popupWidth/2  
 	}); 
 }  
 
-function loading(){
-	//$("#loading").hide("slow");
+function centerUploading(){  
+	var windowWidth = document.documentElement.clientWidth;  
+	var windowHeight = document.documentElement.clientHeight;  
+	var popupHeight = $("#uploading").height();  
+	var popupWidth = $("#uploading").width();  
+	$("#uploading").css({  
+		"position": "fixed",  
+		"top": windowHeight/2-popupHeight/2,  
+		"left": windowWidth/2-popupWidth/2  
+	}); 
+} 
 
-	$("#last").hide("slow");
+function loading(){
 	loadingOpen();
 	centerLoading();
+}
+
+function uploading(){
+	uploadingOpen();
+	centerUploading();
 }
 
 function calLoadingOpen(){  
@@ -339,14 +370,13 @@ function centerCalLoading(){
 	var popupWidth = $("#calLoading").width();  
 	
 	$("#calLoading").css({  
-		"position": "absolute",  
+		"position": "fixed",  
 		"top": windowHeight/2-popupHeight/2,  
 		"left": windowWidth/2-popupWidth/2  
 	}); 
 }  
 
 function calLoading(){
-	//$("#loading").hide("slow");
 	calLoadingOpen();
 	centerCalLoading();
 }

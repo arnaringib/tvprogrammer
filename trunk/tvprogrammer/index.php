@@ -18,10 +18,8 @@ include('functions.php');
 	<div class="user"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sUser.php');?></div>
 	<?php } ?>
 	<div class="header">
-		<div class="logo"></div>
+		<div class="logo"><a href="#"><img src="img/logo.png"/></a></div>
 		<div class="links"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sLinks.php'); ?></div>
-		<div class="next"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sNext.php'); ?></div>
-		<div class="last"><?php if(isset($_SESSION['access'])) if(strcmp($_SESSION['access'],"1") == 0)include('sLast.php'); ?></div>
 	</div>
 	<div class="content">
 		<?php include('sSites.php'); ?>
