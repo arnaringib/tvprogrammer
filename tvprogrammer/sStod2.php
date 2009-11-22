@@ -20,60 +20,32 @@
 	}
 ?>
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="stodTvo()"/>
-<a href="javascript:getLastStod2()">Fyrri vika</a>
-<a href="javascript:getNextStod2()">N&aelig;sta vika</a>
+
 <div id="test"></div>
-<table>
+<table id="tableCal">
 	<tr>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date, date('y')));?> </td></tr>
-				<tr><td><?php  if(strcmp(date('Y-m-d', mktime(0, 0, 0, date('m'), $date, date('y'))), date('Y-m-d')) == 0) getStod2Today(); else  getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date, date("Y"))),$index);?></td></tr>
-			</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+1); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date+1, date('y')));?> </td></tr>
-				<tr><td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+1, date("Y"))),$index); ?></td></tr>
-			</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+2); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date+2, date('y')));?> </td></tr>
-				<tr><td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+2, date("Y"))),$index); ?></td></tr>
-			</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+3); ?></td></tr>
-				<tr class="header"><td> <?php echo date('d. F', mktime(0, 0, 0, date('m'), $date+3, date('y')));?> </td></tr>
-				<tr><td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+3, date("Y"))),$index); ?></td></tr>
-			</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+4); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date+4, date('y')));?> </td></tr>
-				<tr><td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+4, date("Y"))),$index);?></td></tr>
-			</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+5); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date+5, date('y')));?> </td></tr>
-				<tr><td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+5, date("Y"))),$index); ?></td></tr>
-		</table>
-		</td>
-		<td class="day">
-			<table>
-				<tr class="header"><td><?php getWeekday(date('N')+6); ?></td></tr>
-				<tr class="header"><td> <?php  echo date('d. F', mktime(0, 0, 0, date('m'), $date+6, date('y')));?> </td></tr>
-				<tr><td><?php $index = getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+6, date("Y"))),$index); ?><input type="hidden" name="index" value="<?php echo $index; ?>"</td></tr>
+		<td class="headers">
+			<table class="tableContent">
+				<tr class="header">
+					<td><?php getWeekday(date('N')); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+1); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+1, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+2); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+2, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+3); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+3, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+4); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+4, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+4); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+5, date("Y")))?> </td>
+					<td><?php getWeekday(date('N')+4); echo "<BR>" . date('d. F', mktime(0, 0, 0, date("m"), $date+6, date("Y")))?> </td>
+				</tr>
+			
+				<tr>
+					<td><?php  if(strcmp(date('Y-m-d', mktime(0, 0, 0, date('m'), $date, date('y'))), date('Y-m-d')) == 0) getStod2Today(); else  getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date, date("Y"))),$index);?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+1, date("Y"))),$index); ?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+2, date("Y"))),$index); ?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+3, date("Y"))),$index); ?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+4, date("Y"))),$index); ?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+5, date("Y"))),$index); ?></td>
+					<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+6, date("Y"))),$index); ?></td>
+				</tr>
 			</table>
 		</td>
 	</tr>
 </table>
-

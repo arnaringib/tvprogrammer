@@ -1,42 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4508626" serie-id="6992" start-time="2009-11-20 15:35:00" duration="00:39:30">
-      <title>Leiðarljós</title>
+<schedule><event event-id="4471742" serie-id="5348" start-time="2009-11-22 08:01:00" duration="00:22:41">
+      <title>Friðþjófur forvitni</title>
+      <original-title>Curious George</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="13" number-of-episodes="20"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4472642" serie-id="8070" start-time="2009-11-22 18:00:00" duration="00:28:11">
+      <title>Stundin okkar</title>
       <original-title/>
-      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
+      <description><![CDATA[Það verður spennandi að vita hvað Björgvini Franz og Björvínu Franzínu mús dettur í hug í þættinum og hverjir koma í heimsókn til þeirra. Textað á síðu 888 í Textavarpi.]]></description>
       <short-description/>
       <rating/>
       <episode number="1" number-of-episodes="1"/>
       <live>no</live>
-      <rerun>yes</rerun>
+      <rerun>no</rerun>
       <aspect-ratio>
-        <size>4:3</size>
-        <anamorphic>no</anamorphic>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
       <subtitles>
-        <open>yes</open>
-        <closed>no</closed>
+        <open>no</open>
+        <closed>yes</closed>
       </subtitles>
-    </event><event event-id="4508626" serie-id="6992" start-time="2009-11-20 15:35:00" duration="00:39:30">
-      <title>Leiðarljós</title>
-      <original-title/>
-      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
-      <short-description/>
-      <rating/>
-      <episode number="1" number-of-episodes="1"/>
-      <live>no</live>
-      <rerun>yes</rerun>
-      <aspect-ratio>
-        <size>4:3</size>
-        <anamorphic>no</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>yes</open>
-        <closed>no</closed>
-      </subtitles>
-    </event><event event-id="4503384" serie-id="8652" start-time="2009-11-20 17:00:00" duration="00:08:00">
-      <title>Táknmálsfréttir</title>
+      <category value="1">Barnaefni</category>
+      <more-info>http://www.ruv.is/stundinokkar/</more-info>
+    <station>Ruv</station></event><event event-id="4497819" serie-id="8599" start-time="2009-11-22 19:00:00" duration="00:27:00">
+      <title>Fréttir</title>
       <original-title/>
       <description/>
       <short-description/>
@@ -53,8 +55,8 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
-    </event><event event-id="4456459" serie-id="" start-time="2009-11-21 08:00:00" duration="02:25:00">
-      <title>Morgunstundin okkar</title>
+    <station>Ruv</station></event><event event-id="4498584" serie-id="8601" start-time="2009-11-22 19:30:00" duration="00:03:00">
+      <title>Veðurfréttir</title>
       <original-title/>
       <description/>
       <short-description/>
@@ -63,13 +65,73 @@
       <live>no</live>
       <rerun>no</rerun>
       <aspect-ratio>
-        <size>4:3</size>
-        <anamorphic>no</anamorphic>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
-    </event><event event-id="4510433" serie-id="8758" start-time="2009-11-21 08:27:00" duration="00:23:08">
-      <title>Tóta trúður</title>
-      <original-title>Jojo's Circus</original-title>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4463774" serie-id="4408" start-time="2009-11-23 21:15:00" duration="00:42:31">
+      <title>Glæpahneigð</title>
+      <original-title>Criminal Minds</original-title>
+      <description><![CDATA[Bandarísk þáttaröð um sérsveit lögreglumanna sem hefur þann starfa að rýna í persónuleika hættulegra glæpamanna til þess að reyna að sjá fyrir og koma í veg fyrir frekari illvirki þeirra. Meðal leikenda eru Joe Mantegna, Thomas Gibson og Shemar Moore.]]></description>
+      <short-description/>
+      <rating>12</rating>
+      <episode number="61" number-of-episodes="65"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="2">Framhaldsþættir</category>
+      <more-info>http://dagskra.ruv.is/nanar/4408/</more-info>
+    <station>Ruv</station></event><event event-id="4498149" serie-id="8598" start-time="2009-11-23 22:00:00" duration="00:15:00">
+      <title>Tíufréttir</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4472327" serie-id="8150" start-time="2009-11-24 00:00:00" duration="00:30:00">
+      <title>Kastljós</title>
+      <original-title/>
+      <description><![CDATA[Endursýndur þáttur]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4510285" serie-id="5069" start-time="2009-11-24 17:30:00" duration="00:21:37">
+      <title>Frumskógar Goggi</title>
+      <original-title>George of the Jungle</original-title>
       <description/>
       <short-description/>
       <rating/>
@@ -85,13 +147,31 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
-    </event><event event-id="4504853" serie-id="3870" start-time="2009-11-22 08:24:00" duration="00:11:10">
-      <title>Lítil prinsessa</title>
-      <original-title>Little Princess</original-title>
+    <station>Ruv</station></event><event event-id="4510315" serie-id="4162" start-time="2009-11-24 17:52:00" duration="00:23:03">
+      <title>Kóngulóarbörnin í Sólarlaut</title>
+      <original-title>Miss Spider</original-title>
       <description/>
       <short-description/>
       <rating/>
-      <episode number="8" number-of-episodes="35"/>
+      <episode number="39" number-of-episodes="43"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4504922" serie-id="5172" start-time="2009-11-26 17:45:00" duration="00:12:30">
+      <title>Skoppa og Skrítla út um hvippinn og hvappinn</title>
+      <original-title/>
+      <description><![CDATA[Í þáttunum heimsækja Skoppa og Skrítla vinnustaði og kynna sér störf sem þar eru unnin. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="7" number-of-episodes="12"/>
       <live>no</live>
       <rerun>no</rerun>
       <aspect-ratio>
@@ -101,12 +181,53 @@
       </aspect-ratio>
       <subtitles>
         <open>no</open>
+        <closed>yes</closed>
+      </subtitles>
+      <category value="1">Barnaefni</category>
+      <more-info>http://dagskra.ruv.is/nanar/5172/</more-info>
+    <station>Ruv</station></event><event event-id="4508630" serie-id="6992" start-time="2009-11-27 15:35:00" duration="00:39:40">
+      <title>Leiðarljós</title>
+      <original-title/>
+      <description><![CDATA[Endursýndir tveir þættir frá því fyrr í vikunni.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
         <closed>no</closed>
       </subtitles>
-    </event><event event-id="4512856" serie-id="8174" start-time="2009-12-01 15:10:00" duration="01:00:00">
-      <title>Útsvar: Kópavogur - Mosfellsbær</title>
+    <station>Ruv</station></event><event event-id="4513442" serie-id="9106" start-time="2009-11-27 18:00:00" duration="00:22:32">
+      <title>Galdrakrakkar</title>
+      <original-title>Disney Wizards of Waverly Place</original-title>
+      <description><![CDATA[Bandarísk þáttaröð um göldrótt systkini í New York. Meðal leikenda eru Selena Gomez, David Henrie, Jake T. Austin, Maria Canals-Barrera, David DeLuise og Jennifer Stone.
+]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="13"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>yes</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="1">Barnaefni</category>
+      <more-info>http://dagskra.ruv.is/nanar/9106/</more-info>
+    <station>Ruv</station></event><event event-id="4497824" serie-id="8599" start-time="2009-11-27 19:00:00" duration="00:27:00">
+      <title>Fréttir</title>
       <original-title/>
-      <description><![CDATA[Spurningakeppni sveitarfélaganna. Hér eigast við lið Kópavogs og Mosfellsbæjar. Umsjónarmenn eru Sigmar Guðmundsson og Þóra Arnórsdóttir. e.]]></description>
+      <description/>
       <short-description/>
       <rating/>
       <episode number="1" number-of-episodes="1"/>
@@ -121,6 +242,38 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
-      <category value="6">Íslenskir þættir</category>
-      <more-info>http://www.ruv.is/utsvar/</more-info>
-    </event></schedule>
+    <station>Ruv</station></event><event event-id="4454758" serie-id="" start-time="2009-11-28 01:50:00" duration="00:10:00">
+      <title>Útvarpsfréttir í dagskrárlok</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+    <station>Ruv</station></event><event event-id="4512979" serie-id="26394" start-time="2009-12-02 17:05:00" duration="00:05:53">
+      <title>Jóladagatalið - Klængur sniðugi</title>
+      <original-title/>
+      <description><![CDATA[Leikbrúðuþættir um Klæng sniðuga og ævintýri hans eftir Davíð Þór Jónsson og Stein Ármann Magnússon. Leikstjóri er Inga Lísa Middleton. Textað á síðu 888 í Textavarpi. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>yes</closed>
+      </subtitles>
+      <category value="1">Barnaefni</category>
+      <more-info>http://dagskra.ruv.is/nanar/26394/</more-info>
+    <station>Ruv</station></event></schedule>
