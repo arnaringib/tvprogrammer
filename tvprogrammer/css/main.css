@@ -45,29 +45,30 @@ div.content{
 	background:#000033;
 	
 }
-div.next{
-	top:200px;
+div.logo{
+	height:85%
+}
+
+#next{
+	top:100px;
 	width:60px;
 	height:50px;
-	right:175px;
+	right:-62px;
 	position:absolute;
 	background:#003366;
-	border-bottom:#666666 thin solid;
-	border-top:#666666 thin solid;
-	border-right:#666666 thin solid;
+	border:#666666 thin solid;
 	-moz-border-radius-bottomright:10px;
 	-moz-border-radius-topright:10px;
 }
-div.last{
-	top:200px;
+
+#last{
+	top:100px;
 	width:60px;
 	height:50px;
-	left:175px;
+	left:-62px;
 	position:absolute;
 	background:#003366;
-	border-bottom:#666666 thin solid;
-	border-top:#666666 thin solid;
-	border-left:#666666 thin solid;
+	border:#666666 thin solid;
 	-moz-border-radius-bottomleft:10px;
 	-moz-border-radius-topleft:10px;
 }
@@ -92,9 +93,11 @@ div.login{
 	text-align:center;
 	display:none;  
 	color:#FFFFFF;
-	position:fixed; 
 	height:150px;
 	width:300px;
+	position:fixed;
+	top:100px;
+	left:-200px;
 	border:#666666 thin solid;
 	-moz-border-radius:10px;
 	background:#000033;
@@ -112,6 +115,17 @@ div.login{
 	background:#000033;
 }
 
+#uploading{
+	text-align:center;
+	display:none;  
+	color:#FFFFFF;
+	position:fixed; 
+	height:150px;
+	width:300px;
+	border:#666666 thin solid;
+	-moz-border-radius:10px;
+	background:#000033;
+}
 #showInfo{
 	display:none;  
 	position:fixed; 
@@ -201,7 +215,25 @@ img{
 	border-style:none;
 }
 
+input{
+	background-color:#05327C;
+	border:thin;
+	border-style:solid;
+	border-color:#999999;
+	margin:2px;	
+	margin-left:4px;
+	-moz-border-radius:3px;
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+input:hover{
+	background-color:#0033FF;
+}
+input.txt{
+background-color:#FFFFFF;
+}
+
 a:link{color:#FFFFFF;}
 a:visited{color:#FFFFFF;}
-a:hover{}
+a:hover{color:#0033FF}
 a:active{} 

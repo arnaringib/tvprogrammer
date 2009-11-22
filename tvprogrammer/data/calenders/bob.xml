@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schedule><event event-id="4471742" serie-id="5348" start-time="2009-11-22 08:01:00" duration="00:22:41">
-      <title>Friðþjófur forvitni</title>
-      <original-title>Curious George</original-title>
-      <description/>
-      <short-description/>
-      <rating/>
-      <episode number="13" number-of-episodes="20"/>
-      <live>no</live>
-      <rerun>no</rerun>
-      <aspect-ratio>
-        <size>16:9</size>
-        <anamorphic>yes</anamorphic>
-        <letterbox>no</letterbox>
-      </aspect-ratio>
-      <subtitles>
-        <open>no</open>
-        <closed>no</closed>
-      </subtitles>
-    <station>Ruv</station></event><event event-id="4472642" serie-id="8070" start-time="2009-11-22 18:00:00" duration="00:28:11">
+<schedule><event event-id="4472642" serie-id="8070" start-time="2009-11-22 18:00:00" duration="00:28:11">
       <title>Stundin okkar</title>
       <original-title/>
       <description><![CDATA[Það verður spennandi að vita hvað Björgvini Franz og Björvínu Franzínu mús dettur í hug í þættinum og hverjir koma í heimsókn til þeirra. Textað á síðu 888 í Textavarpi.]]></description>
@@ -129,6 +111,43 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event_id="503070419" duration="2:15" start-time="2009-11-24 00:05:00">
+    <service>STOD2</service>
+    <title>Glastonbury</title>
+    <org_title>Glastonbury</org_title>
+    <description>Heimildamynd sem gerð var í tilefni að 30 ára sögu einnar nafntoguðustu og stærstu tónlistarhátíðar í heimi, Glastonbury-hátíðarinnar, sem haldin er árlega á Englandi. Í myndinni koma fram margar af skærustu poppstjörnum þessa tímabils, þ.m.t. Paul McCartney, Radiohead, David Bowie, Oasis, Coldplay, Pink Floyd, R.E.M., að ógleymdri Björk Guðmundsdóttur.</description>
+    <director>Julien Temple</director>
+    <actors>David Bowie; Björk; James Brown; Nick Cave; Billy Bragg</actors>
+    <rating value="2">
+    </rating>
+    <freetoair value="false">
+    </freetoair>
+    <live value="false">
+    </live>
+    <premier value="true">
+    </premier>
+    <aspectratio value="16/9">
+    </aspectratio>
+  <station>Stod 2</station></event><event event-id="4506834" serie-id="8174" start-time="2009-11-24 15:35:00" duration="00:57:30">
+      <title>Útsvar: Akranes - Fjallabyggð</title>
+      <original-title/>
+      <description><![CDATA[Spurningakeppni sveitarfélaganna. Að þessu sinni mætast lið Akraness og Fjallabyggðar. Umsjónarmenn eru Sigmar Guðmundsson og Þóra Arnórsdóttir. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>yes</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+      <category value="6">Íslenskir þættir</category>
+      <more-info>http://www.ruv.is/utsvar/</more-info>
     <station>Ruv</station></event><event event-id="4510285" serie-id="5069" start-time="2009-11-24 17:30:00" duration="00:21:37">
       <title>Frumskógar Goggi</title>
       <original-title>George of the Jungle</original-title>
@@ -165,6 +184,26 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event-id="4504317" serie-id="8167" start-time="2009-11-26 15:45:00" duration="00:40:00">
+      <title>Kiljan</title>
+      <original-title/>
+      <description><![CDATA[Bókaþáttur í umsjón Egils Helgasonar. Ragnheiður Thorsteinsson sér um dagskrárgerð. Textað á síðu 888 í Textavarpi. e.]]></description>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>yes</closed>
+      </subtitles>
+      <category value="6">Íslenskir þættir</category>
+      <more-info>http://www.ruv.is/kiljan/</more-info>
     <station>Ruv</station></event><event event-id="4504922" serie-id="5172" start-time="2009-11-26 17:45:00" duration="00:12:30">
       <title>Skoppa og Skrítla út um hvippinn og hvappinn</title>
       <original-title/>
@@ -256,6 +295,42 @@
         <anamorphic>no</anamorphic>
         <letterbox>no</letterbox>
       </aspect-ratio>
+    <station>Ruv</station></event><event event-id="4471639" serie-id="7440" start-time="2009-11-28 08:16:00" duration="00:11:00">
+      <title>Sögustund með Mömmu Marsibil</title>
+      <original-title>Mama Mirabelle's Home Movies</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="14" number-of-episodes="52"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
+    <station>Ruv</station></event><event event-id="4504681" serie-id="3804" start-time="2009-11-28 09:24:00" duration="00:13:03">
+      <title>Elías Knár</title>
+      <original-title>Eliot Kid</original-title>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="39" number-of-episodes="52"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>16:9</size>
+        <anamorphic>yes</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
+      <subtitles>
+        <open>no</open>
+        <closed>no</closed>
+      </subtitles>
     <station>Ruv</station></event><event event-id="4512979" serie-id="26394" start-time="2009-12-02 17:05:00" duration="00:05:53">
       <title>Jóladagatalið - Klængur sniðugi</title>
       <original-title/>
