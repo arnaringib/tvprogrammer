@@ -36,8 +36,8 @@ $(document).ready(function(){
 						method: "get",
 						url: "channels.php",
 						data: "channel=" + $(this).val(),
-						beforeSend: function(){uploading();},
-						complete: function(){ uploadingExit();}, 
+						beforeSend: function(){loading();},
+						complete: function(){ loadingExit();}, 
 						success: function(html){
 						$("#showCal").show("slow");
 						$("#showCal").html(html);}
