@@ -259,8 +259,6 @@
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
-
-
 			$time = substr($starttime, 11, 5); 
 			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 
@@ -486,7 +484,7 @@
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 	
-				$time = substr($starttime, 11); 
+				$time = substr($starttime, 11, 5); 
 				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
 			}
 			$i++;
