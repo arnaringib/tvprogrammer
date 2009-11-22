@@ -169,7 +169,7 @@
 	
 		$count = $event->length;
 		$i = 0;
-
+		echo '<table>';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
@@ -180,9 +180,10 @@
 
 			$i++;
 		}
+		echo '</table>';
 	}
 	
-	function getSkjareinn($date,$index){
+	function getSkjarEinn($date,$index){
 		$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
@@ -195,6 +196,7 @@
 		$count = $event->length;
 		$i = 0;
 		$last = 0;
+		echo '<table>';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
@@ -207,6 +209,7 @@
 			}
 			$i++;
 		}
+		echo '</table>';
 		return $last;
 	}
 	
@@ -223,6 +226,7 @@
 		$count = $event->length;
 		$i = 0;
 		$last = 0;
+		echo '<table>';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
@@ -235,6 +239,7 @@
 				
 			$i++;
 		}
+		echo '</table>';
 		return $last;
 	}
 	
@@ -250,6 +255,7 @@
 		
 		$count = $event->length;
 		$i = 0;
+		echo '<table>';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
@@ -260,6 +266,7 @@
 
 			$i++;
 		}
+		echo '</table>';
 	}
 	
 	function getWeekday($nr){
@@ -268,19 +275,26 @@
 		}
 		switch ($nr) {
 			case 1:
-				return "M&aacute;nudagur";
+				echo "M&aacute;nudagur";
+				break;
 			case 2:
-				return "&THORN;ri&eth;judagur";
+				echo "&THORN;ri&eth;judagur";
+				break;
 			case 3:
-				return "Mi&eth;vikudagur";
+				echo "Mi&eth;vikudagur";
+				break;
 			case 4:
-				return "Fimmtudagur";
+				echo "Fimmtudagur";
+				break;
 			case 5:
-				return "F&ouml;studagur";
+				echo "F&ouml;studagur";
+				break;
 			case 6:
-				return "Laugardagur";
+				echo "Laugardagur";
+				break;
 			case 7:
-				return "Sunnudagur";
+				echo "Sunnudagur";
+				break;
 		}
 	}
 	
@@ -464,7 +478,8 @@
 	
 		$count = $event->length;
 		$i = 0;
-
+		$k = 1;
+		echo '<table>';
 		while($i != $count){
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('start-time');
@@ -476,6 +491,18 @@
 			}
 			$i++;
 		}
+		echo '</table>';
+		/*while($k != $count-1){
+			$title = $event->item($k)->getElementsByTagName('title');
+			$starttime = $event->item($k)->getAttribute('start-time');
+			
+			if(strcmp(substr($starttime,0,10),$date) == 0){
+	
+				$time = substr($starttime, 11); 
+				echo '<tr class="alt" id="row'.$k.'"><td id="2"><input type="checkbox" name="" value="'.$k	.'" />'  . $time . '</td></tr><tr id="row'.$i.'2"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';			
+			}
+			$k += 2;
+		}*/
 	}
 	
 	function removeFromCalender($calender,$id){

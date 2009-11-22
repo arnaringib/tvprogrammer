@@ -8,7 +8,7 @@ body{
 
 div.container{
 	text-align:left;
-	width: 750px;
+	width: 800px;
 	padding: 0px 0px 0px 0px;
 	margin: 0 auto;
 }
@@ -38,10 +38,38 @@ div.header{
 }
 
 div.content{
-	width: 750px;
+	width: 800px;
+	position:fixed;
 	-moz-border-radius:10px;
 	border:#666666 thin solid;
 	background:#000033;
+	
+}
+div.next{
+	top:200px;
+	width:60px;
+	height:50px;
+	right:175px;
+	position:absolute;
+	background:#003366;
+	border-bottom:#666666 thin solid;
+	border-top:#666666 thin solid;
+	border-right:#666666 thin solid;
+	-moz-border-radius-bottomright:10px;
+	-moz-border-radius-topright:10px;
+}
+div.last{
+	top:200px;
+	width:60px;
+	height:50px;
+	left:175px;
+	position:absolute;
+	background:#003366;
+	border-bottom:#666666 thin solid;
+	border-top:#666666 thin solid;
+	border-left:#666666 thin solid;
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-topleft:10px;
 }
 
 div.ical{
@@ -94,6 +122,14 @@ div.login{
 	color:#000000;
 }
 
+#showCal {
+	
+}
+
+table{
+	font-size:11px;
+}
+
 .showInfoHeader{
 	width:300px;
 	height:26px;
@@ -119,6 +155,7 @@ div.login{
 	overflow:auto;
 	width:300px;
 	height:100px;
+	color:red;
 }
 
 .showWWInfo{
@@ -138,6 +175,26 @@ div.login{
 	float:right;
 	margin-right:2px;
 	margin-top:2px;
+}
+
+#tableCal tr.alt {
+	background-color:#003366;
+	/*font-size:16px;*/
+}
+
+#tableCal tr.header td{
+	font-size:14px;
+	background-color:#003366;
+}
+#tableCal table{
+/*padding-top:0px;
+height:50%;*/
+
+}
+#tableCal table.tableContent td{
+
+/*background-color:#FFFFFF;
+padding-top:0px;*/	
 }
 
 img{

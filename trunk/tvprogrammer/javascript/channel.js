@@ -312,6 +312,8 @@ function centerLoading(){
 
 function loading(){
 	//$("#loading").hide("slow");
+
+	$("#last").hide("slow");
 	loadingOpen();
 	centerLoading();
 }
