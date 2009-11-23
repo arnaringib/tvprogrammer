@@ -51,7 +51,7 @@
 			<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+3, date("Y"))),$index); ?></td>
 			<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+4, date("Y"))),$index); ?></td>
 			<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+5, date("Y"))),$index); ?></td>
-			<td><?php getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+6, date("Y"))),$index); ?></td>
+			<td><?php $index = getStod2(date('Y-m-d', mktime(0, 0, 0, date("m"), $date+6, date("Y"))),$index); ?><input type="hidden" name="index" value="<?php echo $index; ?>" /></td>
 		</tr>
 
 	</tr>
