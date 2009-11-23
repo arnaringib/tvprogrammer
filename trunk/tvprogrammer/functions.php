@@ -511,7 +511,7 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
 
-				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row2'.$i.'"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue), 0, 41) . '</a></td></tr>';			
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row2'.$i.'"><td><a href="javascript:showInfo('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue) . '</a></td></tr>';			
 
 			}
 			$i++;
