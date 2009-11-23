@@ -2,7 +2,6 @@
 	session_start();
 	include('functions.php');
 	$id = $_GET['id'];
-	echo "test" . $_SESSION['calender'];
 	$showInfo = getShowInfo($_SESSION['calender'],$id);
 	$startTime = $showInfo[0];
 	$duration = $showInfo[1];

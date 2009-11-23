@@ -1,6 +1,6 @@
 <table>
 	<tr>
-		<td>Veldu st&ouml;&eth;:</td>
+		<td style="padding:3px;">Veldu st&ouml;&eth;:</td>
 		<td><select id="channel" onchange="">
 			<option value="0">R&uacute;v</option>
 			<option value="1">St&ouml;&eth; 2</option>

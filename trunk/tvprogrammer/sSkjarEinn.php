@@ -57,3 +57,4 @@
 		</tr>
 	</tr>
 </table>
+<div id="showChannelInfo"></div>

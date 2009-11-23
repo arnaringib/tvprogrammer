@@ -3,9 +3,10 @@ var last = "0";
 var popupStatus = 0;
 var popupLoading = 0
 var popupCalLoading = 0;
+var popupChannelLoading = 0;
 $(document).ready(function(){
-	
 	$("showInfo").hide(0);
+	$("showChannelInfo").hide(0);
 	$("#last").hide("slow");
 	$("#next").hide("slow");
 	$.ajax({
@@ -49,7 +50,10 @@ $(document).ready(function(){
 	});
 	$(document).keypress(function(e){  
 		if(e.keyCode==27 && popupStatus==1){  
-			showInfoExit();  
+			showInfoExit(); 
+		} 
+		if(e.keyCode==27 && popupShowChannelInfo==1){  
+			showInfoChannelExit(); 
 		} 
 	});
 });
@@ -287,19 +291,47 @@ function showInfo(id){
 	centerShowInfo();
 }
 
-/*function showInfoChannels(date, id){
-	$("#showInfo").hide("slow");
+function showInfoChannels(date, id, cal){
+	$("#showChannelInfo").hide("slow");
 	$.ajax({
 		method: "get",
 		url: "getShowInfoChannels.php",
-		data: ("id="+id+"&dateFrom="+$("index").val()),
+		data: ("id="+id+"&date=" + date + "&cal=" + cal),
 		success: function(html){
-			$("#showInfo").show("slow");
-			$("#showInfo").html(html);}
+			$("#showChannelInfo").show("slow");
+			$("#showChannelInfo").html(html);}
 		});
-	showInfoOpen();
-	centerShowInfo();
-}*/
+	showChannelInfoOpen();
+	centerShowChannelInfo();
+}
+
+function showChannelInfoOpen(){  
+	//loads popup only if it is disabled  
+	if(popupChannelLoading==0){  
+		$("#showChannelInfo").fadeIn("slow");
+		popupChannelLoading = 1;
+	}
+}
+
+function showChannelInfoExit(){ 
+	if(popupChannelLoading==1){  
+		$("#showChannelInfo").fadeOut("slow");  
+		popupChannelLoading = 0;
+	}  
+}
+
+function centerShowChannelInfo(){  
+	var windowWidth = document.documentElement.clientWidth;  
+	var windowHeight = document.documentElement.clientHeight;  
+	var popupHeight = $("#showChannelInfo").height();  
+	var popupWidth = $("#showChannelInfo").width();  
+	
+	$("#showChannelInfo").css({  
+		"position": "fixed",  
+		"top": windowHeight/2-popupHeight/2,  
+		"left": windowWidth/2-popupWidth/2  
+	}); 
+}  
 
 function loadingOpen(){  
 	if(popupLoading==0){  

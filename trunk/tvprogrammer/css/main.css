@@ -129,11 +129,24 @@ div.login{
 #showInfo{
 	display:none;  
 	position:fixed; 
-	background:#FFFFFF;
+	background:#003366;
 	height:150px;
 	width:300px;
 	border:2px solid #000000;
-	color:#000000;
+	-moz-border-radius:10px;
+	padding-bottom:5px;
+	color:#FFFFFF;
+}
+#showChannelInfo{
+	display:none;  
+	position:fixed; 
+	background:#003366;
+	height:150px;
+	width:300px;
+	border:2px solid #000000;
+	-moz-border-radius:10px;
+	padding-bottom:5px;
+	color:#FFFFFF;
 }
 
 #showCal {
@@ -147,7 +160,7 @@ table{
 .showInfoHeader{
 	width:300px;
 	height:26px;
-	border-bottom:1px #000000 dashed;
+	border-bottom:1px #FFFFFF dashed;
 }
 
 .showInfoExit{
@@ -169,15 +182,15 @@ table{
 	overflow:auto;
 	width:300px;
 	height:100px;
-	color:red;
+	color:#FFFFFF;
 }
 
 .showWWInfo{
 	height:20px;
 	width:300px;
-	background:#666666;
+	background:#000033;
 	color:#FFFFFF;
-	border-bottom:#000000 thin solid;
+	border-bottom:#FFFFFF thin solid;
 }
 
 .showStationInfo{

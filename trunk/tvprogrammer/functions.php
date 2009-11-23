@@ -177,7 +177,7 @@
 			$description = $event->item($i)->getElementsByTagName('description');
 			
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';	 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($dateFrom,0,4).substr($dateFrom,5,2).substr($dateFrom,8,2).','.$i.', 0)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';	 
 
 			$i++;
 		}
@@ -205,7 +205,7 @@
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){	
 				$time = substr($starttime, 11); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 2)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 				$last = $i+$index;
 			}
 			$i++;
@@ -234,7 +234,7 @@
 		
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 				$last = $i+$index;
 			}
 				
@@ -261,7 +261,7 @@
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.date("Y").date("m").date("d").','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 
 			$i++;
 		}
@@ -485,7 +485,7 @@
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
 
-				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'"2><td><a href="javascript:showInfo('.$i.')">' . substr(htmlentities(utf8_decode($title->item(0)->nodeValue)), 0, 41) . '</a></td></tr>';			
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row2'.$i.'"><td><a href="javascript:showInfo('.$i.')">' . substr(htmlentities(utf8_decode($title->item(0)->nodeValue)), 0, 41) . '</a></td></tr>';			
 
 			}
 			$i++;
@@ -680,8 +680,28 @@
 		
 		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
 	}
-/*function getShowInfoChannels($dateFrom, $id){
-		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
+function getShowInfoChannels($dateFrom, $id,$cal){
+		if(strcmp($cal,"0")==0){
+			$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
+			$start = 'start-time';
+			$station = 'Ruv';
+		}
+		if(strcmp($cal,"1")==0){
+			if(strcmp($dateFrom,date('Y-m-d')) == 0){
+				$file = 'http://stod2.visir.is/?pageid=258';
+			}
+			else{
+				$file = 'http://stod2.visir.is/?pageid=247';
+			}	
+				$start = 'starttime';
+				$stodtvo = true;
+				$station = 'Stod 2';
+		}
+			if(strcmp($cal,"2")==0){
+				$file = 'http://skjarinn.is/einn/dagskrarupplysingar/?weeks=2&output_format=xml';
+				$start = 'start-time';
+				$station = 'Skjar einn';
+			}
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){
@@ -691,14 +711,13 @@
 		$event = $dom->getElementsByTagName('event');
 		$title = $dom->getElementsByTagName('title');
 		$description = $dom->getElementsByTagName('description');
-		$station = $dom->getElementsByTagName('station');
 		
-		$starttime = getStartTime($event->item($id)->getAttribute('start-time'));
+		$starttime = getStartTime($event->item($id)->getAttribute($start));
 		$duration = getDuration($event->item($id)->getAttribute('duration'));
 		$cTitle = utf8_decode($title->item($id)->nodeValue);
 		$cDescription = utf8_decode($description->item($id)->nodeValue);
-		$cStation = utf8_decode($station->item($id)->nodeValue);
+		$cStation = $station;
 		
 		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
-	}*/
+	}
 ?>
