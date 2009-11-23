@@ -174,9 +174,10 @@
 			$title = $event->item($i)->getElementsByTagName('title');
 			$serieid = $event->item($i)->getAttribute('serie-id');
 			$starttime = $event->item($i)->getAttribute('start-time');
-		
+			$description = $event->item($i)->getElementsByTagName('description');
+			
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'"/>'  . $time . '</td></tr><tr><td>' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';	 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.$i.')">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';	 
 
 			$i++;
 		}
@@ -483,7 +484,9 @@
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
-				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row2'.$i.'"><td><a href="javascript:showInfo('.$i.')">' . substr(htmlentities(utf8_decode($title->item(0)->nodeValue)), 0, 41) . '</a></td></tr>';			
+
+				echo '<tr id="row'.$i.'"><td><input type="checkbox" name="" value="'.$i.'" />'  . $time . '</td></tr><tr id="row'.$i.'"2><td><a href="javascript:showInfo('.$i.')">' . substr(htmlentities(utf8_decode($title->item(0)->nodeValue)), 0, 41) . '</a></td></tr>';			
+
 			}
 			$i++;
 		}
@@ -677,4 +680,25 @@
 		
 		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
 	}
+/*function getShowInfoChannels($dateFrom, $id){
+		$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
+
+		$dom = new DOMdocument('1.0', 'UTF-8');
+		if(!$dom->load($file)){
+			echo 'Can\'t load a document!';
+		}
+		$schedule = $dom->getElementsByTagName('schedule');
+		$event = $dom->getElementsByTagName('event');
+		$title = $dom->getElementsByTagName('title');
+		$description = $dom->getElementsByTagName('description');
+		$station = $dom->getElementsByTagName('station');
+		
+		$starttime = getStartTime($event->item($id)->getAttribute('start-time'));
+		$duration = getDuration($event->item($id)->getAttribute('duration'));
+		$cTitle = utf8_decode($title->item($id)->nodeValue);
+		$cDescription = utf8_decode($description->item($id)->nodeValue);
+		$cStation = utf8_decode($station->item($id)->nodeValue);
+		
+		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
+	}*/
 ?>

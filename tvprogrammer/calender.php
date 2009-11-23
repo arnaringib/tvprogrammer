@@ -19,6 +19,7 @@
 		{
 		  $("tr:even").css("background-color", "#000033");
 		  $("tr:odd").css("background-color", "#003366");
+		  $("tr:odd").css("color", "#CCCCCC");
 		});
 </script>
 <table id="tableCal">

@@ -2,8 +2,9 @@
 	session_start();
 	include('functions.php');
 	$id = $_GET['id'];
-	echo "test" . $_SESSION['calender'];
-	$showInfo = getShowInfo($_SESSION['calender'],$id);
+	$dateFrom = $_GET['dateFrom'];
+	echo"test: " . $dateFrom;
+	$showInfo = getShowInfoChannels($dateFrom,$id);
 	$startTime = $showInfo[0];
 	$duration = $showInfo[1];
 	$cTitle = $showInfo[2];
