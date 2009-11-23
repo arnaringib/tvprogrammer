@@ -106,7 +106,7 @@ function eyda(){
 					url: "calender.php"
 				});
 				$("#row"+val).hide(0);
-				$("#row"+val+"2").hide(0);
+				$("#row2"+val).hide(0);
 				$("#userCalender").show("slow");}
 	    });
 	});
