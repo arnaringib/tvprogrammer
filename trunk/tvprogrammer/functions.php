@@ -1,5 +1,7 @@
 <?php 
 	require_once 'other/iCalcreator.php';
+	setlocale(LC_ALL, 'is_IS');
+	
 	function addUser($name,$email,$username,$password){
 		$result = false;
 		
@@ -294,6 +296,35 @@
 			case 7:
 				echo "Sunnudagur";
 				break;
+		}
+	}
+	function getMonth($nr){
+
+		switch ($nr) {
+			case 1:
+				return "Jan&uacute;ar";;
+			case 2:
+				return "Febr&uacute;";
+			case 3:
+				return "Mars";;
+			case 4:
+				return "Apr&iacute;l";
+			case 5:
+				return "Ma&iacute;";
+			case 6:
+				return "J&uacute;ni";
+			case 7:
+				return "J&uacute;li";
+			case 8:
+				return "&aacute;g&uacute;st";
+			case 9:
+				return "September";
+			case 10:
+				return "Okt&oacute;ber";
+			case 11:
+				return "N&oacute;vember";
+			case 12:
+				return "Desember";
 		}
 	}
 	
@@ -680,6 +711,7 @@
 		
 		return array($starttime,$duration,$cTitle,$cDescription,$cStation);
 	}
+
 function getShowInfoChannels($dateFrom, $id,$cal){
 		if(strcmp($cal,"0")==0){
 			$file = 'http://muninn.ruv.is/files/xml/sjonvarpid/' . $dateFrom;
@@ -702,6 +734,7 @@ function getShowInfoChannels($dateFrom, $id,$cal){
 				$start = 'start-time';
 				$station = 'Skjar einn';
 			}
+
 
 		$dom = new DOMdocument('1.0', 'UTF-8');
 		if(!$dom->load($file)){

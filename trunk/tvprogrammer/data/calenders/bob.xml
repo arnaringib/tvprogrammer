@@ -57,6 +57,20 @@
         <open>no</open>
         <closed>no</closed>
       </subtitles>
+    <station>Ruv</station></event><event event-id="4450032" serie-id="" start-time="2009-11-27 00:25:00" duration="08:00:00">
+      <title>Dagskrárlok</title>
+      <original-title/>
+      <description/>
+      <short-description/>
+      <rating/>
+      <episode number="1" number-of-episodes="1"/>
+      <live>no</live>
+      <rerun>no</rerun>
+      <aspect-ratio>
+        <size>4:3</size>
+        <anamorphic>no</anamorphic>
+        <letterbox>no</letterbox>
+      </aspect-ratio>
     <station>Ruv</station></event><event event-id="4513442" serie-id="9106" start-time="2009-11-27 18:00:00" duration="00:22:32">
       <title>Galdrakrakkar</title>
       <original-title>Disney Wizards of Waverly Place</original-title>
