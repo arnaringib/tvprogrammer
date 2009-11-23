@@ -248,7 +248,6 @@ function cleanOld(){
 function showInfoOpen(){  
 	//loads popup only if it is disabled  
 	if(popupStatus==0){  
-//		$("#backgroundPopup").css({"opacity": "0.7"});
 		$("#showInfo").fadeIn("slow");
 		popupStatus = 1;
 	}
@@ -268,7 +267,7 @@ function centerShowInfo(){
 	var popupWidth = $("#showInfo").width();  
 	
 	$("#showInfo").css({  
-		"position": "absolute",  
+		"position": "fixed",  
 		"top": windowHeight/2-popupHeight/2,  
 		"left": windowWidth/2-popupWidth/2  
 	}); 
@@ -287,6 +286,20 @@ function showInfo(id){
 	showInfoOpen();
 	centerShowInfo();
 }
+
+/*function showInfoChannels(date, id){
+	$("#showInfo").hide("slow");
+	$.ajax({
+		method: "get",
+		url: "getShowInfoChannels.php",
+		data: ("id="+id+"&dateFrom="+$("index").val()),
+		success: function(html){
+			$("#showInfo").show("slow");
+			$("#showInfo").html(html);}
+		});
+	showInfoOpen();
+	centerShowInfo();
+}*/
 
 function loadingOpen(){  
 	if(popupLoading==0){  

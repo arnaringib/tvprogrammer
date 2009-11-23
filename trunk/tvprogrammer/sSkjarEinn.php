@@ -23,8 +23,9 @@
 		<script>
 		$(document).ready(function()
 		{
-		  $("tr:even").css("background-color", "#000033");
-		  $("tr:odd").css("background-color", "#003366");
+		  $("tr:even").css("background-color", "#003366");
+		  $("tr:even").css("color", "#CCCCCC");
+		  $("tr:odd").css("background-color", "#000033");
 		});
 </script>
 <form>
