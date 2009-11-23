@@ -26,8 +26,7 @@
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="ruv()"/>
 <div id="last"><a href="javascript:getLastRuv()"><img src="img/back.png" align="middle" /></a></div>
 <div id="next"><a href="javascript:getNextRuv()"><img src="img/forward.png" align="middle" /></a></div>
-<div id="showInfo"></div>
-
+<div id="showChannelInfo"></div>
 <table id="tableCal">
 	<tr>
 		<tr class="header">

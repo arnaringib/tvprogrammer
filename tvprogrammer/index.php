@@ -6,7 +6,7 @@ include('functions.php');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>TV-programmer</title>
+<title>Your TV Calendar!</title>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
 <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
