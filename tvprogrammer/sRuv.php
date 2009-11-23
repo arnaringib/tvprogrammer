@@ -27,7 +27,7 @@
 <div id="last"><a href="javascript:getLastRuv()"><img src="img/back.png" align="middle" /></a></div>
 <div id="next"><a href="javascript:getNextRuv()"><img src="img/forward.png" align="middle" /></a></div>
 <div id="showChannelInfo"></div>
-<table id="tableCal">
+<table id="tableCal" align="center">
 	<tr>
 		<tr class="header">
 			<td><?php getWeekday(date('N')); echo "<BR>" . date('d. ', mktime(0, 0, 0, date("m"), $date, date("Y"))) . getMonth(date('n', mktime(0, 0, 0, date("m"), $date, date("Y"))))?> </td>

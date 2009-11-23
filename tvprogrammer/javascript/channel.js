@@ -11,6 +11,17 @@ $(document).ready(function(){
 	$("#next").hide("slow");
 	$.ajax({
 		method: "get",
+		url: "sDay.php",
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
+		success: function(html){
+		$("#last").show("slow");
+		$("#next").show("slow");
+		$("#showCalDay").show("slow");
+		$("#showCalDay").html(html);}
+	});
+	$.ajax({
+		method: "get",
 		url: "calender.php",
 		beforeSend: function(){calLoading(); cleanOld();},
 		complete: function(){ calLoadingExit();}, 
@@ -94,6 +105,38 @@ function stodTvo(){
 	});
 }
 
+function day(){
+	$('input:checked').each(function(){		
+		if($(this).attr("cal") == 0){
+			$.ajax({
+				method: "get",
+				url: "updateCalander.php",
+				data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=0"),
+				beforeSend: function(){uploading();},
+				complete: function(){ uploadingExit();}
+			});
+		}
+		if($(this).attr("cal") == 1){
+			$.ajax({
+				method: "get",
+				url: "updateCalander.php",
+				data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=1"),
+				beforeSend: function(){uploading();},
+				complete: function(){ uploadingExit();}
+			});
+		}
+		if($(this).attr("cal") == 2){
+			$.ajax({
+				method: "get",
+				url: "updateCalander.php",
+				data: ("id=" + $(this).val() + "&date="+ $(this).attr("name") +  "&cal=2"),
+				beforeSend: function(){uploading();},
+				complete: function(){ uploadingExit();}
+			});
+		}
+	});
+}
+
 function eyda(){
 	$('input:checked').each(function(){
 		var val = $(this).val();
@@ -117,6 +160,7 @@ function eyda(){
 
 }
 function getNext(){
+		$("#userCalender").hide("slow");
 		$.ajax({
 			method:"get",
 			url: "calender.php",
@@ -124,7 +168,6 @@ function getNext(){
 			beforeSend: function(){calLoading();},
 			complete: function(){ calLoadingExit();}, 
 			success: function(html){
-				$("#userCalender").hide("slow");
 				$("#userCalender").show("slow");
 				$("#userCalender").html(html);
 			}
@@ -133,6 +176,7 @@ function getNext(){
         
    }
 function getLast(){
+	$("#userCalender").hide("slow");
 	$.ajax({
 		method:"get",
 		url: "calender.php",
@@ -140,9 +184,38 @@ function getLast(){
 		beforeSend: function(){calLoading();},
 		complete: function(){ calLoadingExit();}, 
 		success: function(html){
-			$("#userCalender").hide("slow");
+		
 			$("#userCalender").show("slow");
 			$("#userCalender").html(html);
+		}
+	});
+}
+function getNextDay(){
+	$("#showCalDay").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sDay.php",
+		data: "date=1",
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
+		success: function(html){
+			$("#showCalDay").show("slow");
+			$("#showCalDay").html(html);
+		}
+		
+	});        
+}
+function getLastDay(){
+	$("#showCalDay").hide("slow");
+	$.ajax({
+		method:"get",
+		url: "sDay.php",
+		data: "date=2",
+		beforeSend: function(){loading();},
+		complete: function(){ loadingExit();}, 
+		success: function(html){
+			$("#showCalDay").show("slow");
+			$("#showCalDay").html(html);
 		}
 	});
     

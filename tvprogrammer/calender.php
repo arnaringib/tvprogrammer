@@ -22,7 +22,7 @@
 		  $("tr:odd").css("color", "#CCCCCC");
 		});
 </script>
-<table id="tableCal">
+<table id="tableCal" align="center">
 	<tr>
 		<tr class="header">
 			<td><?php getWeekday(date('N'));  echo "<BR>" . date('d. ', mktime(0, 0, 0, date("m"), $date, date("Y"))) . getMonth(date('n', mktime(0, 0, 0, date("m"), $date, date("Y"))))?> </td>

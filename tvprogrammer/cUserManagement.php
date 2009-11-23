@@ -10,5 +10,5 @@
 			}
 		}
 	}
-	header('Location: http://' . $_SERVER['HTTP_HOST'] . '/verkefni/index.php?pageid=2');
+	header('Location: http://' . $_SERVER['HTTP_HOST'] . '/~aib3/tvcalendar/index.php?pageid=2');
 ?>

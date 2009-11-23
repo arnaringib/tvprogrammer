@@ -179,7 +179,7 @@
 			$description = $event->item($i)->getElementsByTagName('description');
 			
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($dateFrom,0,4).substr($dateFrom,5,2).substr($dateFrom,8,2).','.$i.', 0)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';	 
+			echo '<tr><td><input type="checkbox" name="'.$dateFrom.'" value="'.$i.'" cal="0"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($dateFrom,0,4).substr($dateFrom,5,2).substr($dateFrom,8,2).','.$i.', 0)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</a></td></tr>';	 
 
 			$i++;
 		}
@@ -207,7 +207,7 @@
 			
 			if(strcmp(substr($starttime,0,10),$date) == 0){	
 				$time = substr($starttime, 11); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 2)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" cal="2"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 2)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 				$last = $i+$index;
 			}
 			$i++;
@@ -236,7 +236,7 @@
 		
 			if(strcmp(substr($starttime,0,10),$date) == 0){
 				$time = substr($starttime, 11, 5); 
-				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+				echo '<tr><td><input type="checkbox" name="'.$date.'" value="'.($i+$index).'" cal="1"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.substr($date,0,4).substr($date,5,2).substr($date,8,2).','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 				$last = $i+$index;
 			}
 				
@@ -263,7 +263,7 @@
 			$title = $event->item($i)->getElementsByTagName('title');
 			$starttime = $event->item($i)->getAttribute('starttime');
 			$time = substr($starttime, 11, 5); 
-			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" />'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.date("Y").date("m").date("d").','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
+			echo '<tr><td><input type="checkbox" name="' . substr($starttime,0,10) . '" value="'.$i.'" cal="1"/>'  . $time . '</td></tr><tr><td><a href="javascript:showInfoChannels('.date("Y").date("m").date("d").','.$i.', 1)">' . htmlentities(utf8_decode($title->item(0)->nodeValue)) . '</td></tr>';
 
 			$i++;
 		}
@@ -420,12 +420,8 @@
 			}
 
 			$event = $dom->getElementsByTagName('event');
-			if(strcmp($cal,"1")==0){
-				$start = 'starttime';
-			}
-			else{
-				$start = 'start-time';
-			}
+			$start = 'start-time';
+
 			for($i = 0; $i != $event->length; $i++){
 				$title2 = $event->item($i)->getElementsByTagName('title');
 				if(strcmp($event->item($i)->getAttribute($start),$starttime) == 0 && strcmp(utf8_decode($title2->item(0)->nodeValue),utf8_decode($title)) == 0){
