@@ -33,7 +33,7 @@
 <div id="next"><a href="javascript:getNextStod2()"><img src="img/forward.png" align="middle" /></a></div>
 
 <div id="test"></div>
-<table id="tableCal">
+<table id="tableCal" align="center">
 	<tr>
 		<tr class="header">
 			<td><?php getWeekday(date('N')); echo "<BR>" . date('d. ', mktime(0, 0, 0, date("m"), $date, date("Y"))) . getMonth(date('n', mktime(0, 0, 0, date("m"), $date, date("Y"))))?> </td>
