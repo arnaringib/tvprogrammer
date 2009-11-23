@@ -23,8 +23,8 @@
 		});
 </script>	
 <input type="button" value="Skr&aacute; v&ouml;ldu &thorn;&aelig;ttina" onclick="ruv()"/>
-<div id="last"><a href="javascript:getLastRuv()">Fyrri vika</a></div>
-<div id="next"><a href="javascript:getNextRuv()">N&aelig;sta vika</a></div>
+<div id="last"><a href="javascript:getLastRuv()"><img src="img/back.png" align="middle" /></a></div>
+<div id="next"><a href="javascript:getNextRuv()"><img src="img/forward.png" align="middle" /></a></div>
 
 <table id="tableCal">
 	<tr>
